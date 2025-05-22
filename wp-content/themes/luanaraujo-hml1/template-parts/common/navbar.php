@@ -22,8 +22,9 @@
                  <nav class="navbar2_dropdown-list w-dropdown-list">
                      <?php
                      $categories = get_categories([
-                     	"orderby" => "name",
+                     	"orderby" => "term_order",
                      	"order" => "ASC",
+                     	"hide_empty" => false,
                      ]);
 
                      foreach ($categories as $category) {

@@ -17,7 +17,7 @@
                                   <div class="footer1_link-list">
                                       <?php
                                       $categories = get_categories([
-                                      	"orderby" => "name",
+                                      	"orderby" => "term_order",
                                       	"order" => "ASC",
                                       	"hide_empty" => false,
                                       ]);
