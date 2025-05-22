@@ -11,7 +11,7 @@
              <div data-delay="200" data-hover="true" data-w-id="2afd9c1c-f011-b900-48dd-80bf4054e1ff"
                   class="navbar_menu-dropdown w-dropdown">
                  <div class="navbar2_dropdwn-toggle w-dropdown-toggle">
-                     <div>CATEGORIAS</div>
+                     <div>EDITORIAS</div>
                      <div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16"
                               fill="none" xmlns="http://www.w3.org/2000/svg">
                              <path fill-rule="evenodd" clip-rule="evenodd"
