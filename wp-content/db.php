@@ -1,0 +1,1 @@
+/Users/adrianosg/Local Sites/portal-luana-araujo/app/public/wp-content/plugins/query-monitor/wp-content/db.php
