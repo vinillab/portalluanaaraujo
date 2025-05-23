@@ -37,7 +37,7 @@
              <a href="<?php echo esc_url(home_url("bio")); ?>" class="navbar_link w-nav-link">BIO</a>
          </nav>
          <div id="w-node-_2afd9c1c-f011-b900-48dd-80bf4054e211-4054e1fa" class="navbar_button-wrapper">
-             <a href="#" class="button is-link is-icon w-inline-block">
+             <a href="#" id="search-icon" class="button is-link is-icon w-inline-block">
                  <div>PESQUISAR</div>
                  <div class="icon-embed-xsmall w-embed"><svg width="37" height="37" viewBox="0 0 37 37" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
