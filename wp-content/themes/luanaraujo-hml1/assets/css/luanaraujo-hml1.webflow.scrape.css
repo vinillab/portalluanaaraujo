@@ -6643,6 +6643,7 @@ figcaption {
 
   .header_menu-wrapper {
     grid-column-gap: 1.5rem;
+    flex-flow: column;
   }
 
   .layout192_content, .layout3_content {
@@ -6900,6 +6901,7 @@ figcaption {
 
   .header_menu-wrapper {
     grid-row-gap: 2.5rem;
+    flex-flow: column;
     grid-template-columns: 1fr;
   }
 
@@ -6944,11 +6946,7 @@ figcaption {
   justify-self: end;
 }
 
-#w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b259e-c22b2599 {
-  place-self: start center;
-}
-
-#w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b25a1-c22b2599, #w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b25b0-c22b2599, #w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b25b9-c22b2599, #w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b25c4-c22b2599 {
+#w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b25a1-c22b2599, #w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b25b0-c22b2599, #w-node-_50caee5b-1a48-9cd4-aaa4-381dc22b25b9-c22b2599 {
   justify-self: center;
 }
 

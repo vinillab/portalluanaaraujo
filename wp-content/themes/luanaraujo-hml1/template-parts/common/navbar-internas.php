@@ -7,9 +7,6 @@
               <nav role="navigation" class="navbar4_menu w-nav-menu">
                   <div class="w-layout-grid header_menu-wrapper">
                       <div class="header_link-column">
-                          <div class="text-weight-xbold">Início</div>
-                      </div>
-                      <div class="header_link-column">
                           <div class="text-weight-xbold">Editorias</div>
                           <div class="spacer-xsmall"></div>
                           <div class="header_link-list">
@@ -28,9 +25,6 @@
                       </div>
                       <div class="header_link-column">
                           <div class="text-weight-xbold">COP30</div>
-                          <div class="spacer-xsmall"></div>
-                      </div>
-                      <div class="header_link-column">
                           <div class="text-weight-xbold">EM ALTA</div>
                           <div class="spacer-xsmall"></div>
                       </div>
@@ -38,8 +32,8 @@
                           <div class="text-weight-xbold">SOBRE</div>
                           <div class="spacer-xsmall"></div>
                           <div class="header_link-list">
-                              <a href="#" class="header_link-item">Luana Araújo</a>
-                              <a href="#" class="header_link-item">Contato</a>
+                              <a href="<?php echo esc_url(home_url("bio")); ?>" class="header_link-item">Luana
+                                  Araújo</a>
                           </div>
                       </div>
 

@@ -32,7 +32,8 @@
                                   <div class="text-weight-semibold">Sobre</div>
                                   <div class="spacer-xsmall"></div>
                                   <div class="footer1_link-list">
-                                      <a href="#" class="footer_link">Luana araújo</a>
+                                      <a href="<?php echo esc_url(home_url("bio")); ?>" class="footer_link">Luana
+                                          araújo</a>
                                   </div>
                               </div>
                           </div>
