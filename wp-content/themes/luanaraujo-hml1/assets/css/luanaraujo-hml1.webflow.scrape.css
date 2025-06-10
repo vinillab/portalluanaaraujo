@@ -4623,6 +4623,11 @@ figcaption {
   display: inline-block;
 }
 
+.image-materia-wrapper {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .blog-post-header2_image-wrapper {
   border-radius: var(--_ui-styles---radius--large);
   width: 100%;
@@ -5447,6 +5452,18 @@ figcaption {
   padding: 1.5rem;
 }
 
+.header-materia-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 5% 0;
+}
+
+.content-materia-wrapper {
+  padding-top: 3rem;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 3.25rem;
@@ -5948,6 +5965,11 @@ figcaption {
   .footer_top-wrapper {
     grid-row-gap: 4rem;
     grid-template-columns: 1fr;
+  }
+
+  .image-materia-wrapper {
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
   .blog-post-header2_image-wrapper, .blog-post2-content_content {
