@@ -40,12 +40,6 @@
                             </div>
                             <?php get_template_part("template-parts/common/share-icons"); ?>
                         </div>
-                        <div class="spacer-medium"></div>
-                        <div class="blog-post-header2_image-wrapper">
-                            <?php if (has_post_thumbnail()): ?>
-                            <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
-                            <?php endif; ?>
-                        </div>
                     </div>
                 </div>
                 <div class="spacer-medium"></div>
