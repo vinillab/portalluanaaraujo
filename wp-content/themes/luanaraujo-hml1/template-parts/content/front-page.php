@@ -1,5 +1,6 @@
 <div class="page-wrapper">
     <?php get_template_part("template-parts/common/navbar"); ?>
+    <?php get_template_part("template-parts/common/navbar-internas"); ?>
     <?php get_template_part("template-parts/common/global-styles"); ?>
 
     <main class="main-wrapper">
