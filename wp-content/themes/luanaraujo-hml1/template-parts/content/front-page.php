@@ -13,3 +13,5 @@
     <?php get_template_part("template-parts/common/footer"); ?>
 
 </div>
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/navbar-scroll.js"></script>
