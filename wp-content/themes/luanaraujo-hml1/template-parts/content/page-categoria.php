@@ -214,7 +214,6 @@
                                         endif;
                                         wp_reset_postdata();
                                         ?>
-        <?php get_template_part("template-parts/sections/home-categorias"); ?>
 
     </main>
 

@@ -169,7 +169,6 @@
         </div>
     </div>
 </section>
-<?php get_template_part("template-parts/sections/home-categorias"); ?>
 
 </main>
 <?php get_template_part("template-parts/common/footer"); ?>
