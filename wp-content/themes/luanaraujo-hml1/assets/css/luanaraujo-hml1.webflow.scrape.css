@@ -4087,7 +4087,7 @@ figcaption {
 .section_ultimas {
   background-color: var(--color-scheme-1--background);
   color: var(--secundárias--azul-escuro);
-  padding-top: 3rem;
+  padding-top: 0;
 }
 
 .blog10_heading-wrapper {
