@@ -4,7 +4,7 @@
     </div>
     <div class="padding-global">
         <div class="container-large">
-            <div class="padding-section-medium">
+            <div class="padding-section-small">
                 <div class="blog10_featured-blog">
                     <div class="blog10_main-post">
                         <div class="blog10_main-list-wrapper">
