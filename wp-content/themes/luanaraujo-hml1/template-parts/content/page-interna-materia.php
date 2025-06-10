@@ -54,7 +54,7 @@
                         <?php if (has_post_thumbnail()): ?>
                         <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
                         <?php endif; ?>
-                    </div>="eager" class="blog-post-header2_image">
+                    </div>
                 </div>
             </div>
             <div class="content-materia-wrapper">
@@ -93,7 +93,6 @@
             </div>
 </div>
 </section>
-
 
 <section class="section_related">
     <div class="padding-global">
