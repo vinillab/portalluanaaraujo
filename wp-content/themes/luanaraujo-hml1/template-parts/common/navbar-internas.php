@@ -61,6 +61,8 @@
           </div>
           <div class="navbar4_links-wrapper">
               <a href="<?php echo esc_url(home_url("")); ?>" class="navbar4_main_link w-nav-link">InÍCIO</a>
+              <a href="<?php echo esc_url(home_url("em-alta")); ?>" class="navbar4_main_link w-nav-link">EM ALTA</a>
+
               <?php
               $categories = get_categories([
               	"orderby" => "name",
@@ -72,6 +74,7 @@
               	echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="navbar4_main_link w-nav-link">' . esc_html($category->name) . "</a>";
               }
               ?>
+
           </div>
           <div class="navbar4_button-wrapper">
               <div class="navbar4_search_text">PESQUISAR</div>
