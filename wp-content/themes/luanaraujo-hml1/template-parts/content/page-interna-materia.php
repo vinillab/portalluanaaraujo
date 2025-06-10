@@ -21,7 +21,7 @@
                         <div class="spacer-medium"></div>
                         <h1 class="heading-style-h2"><?php the_title(); ?></h1>
                         <div class="spacer-xsmall"></div>
-                        <div class="text-size-regular"><?php the_excerpt(); ?></div>
+                        <div class="text-size-large"><?php the_excerpt(); ?></div>
                     </div>
                     <div class="spacer-medium"></div>
                     <div class="blog-post-header2_content">
