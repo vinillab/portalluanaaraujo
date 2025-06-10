@@ -31,6 +31,10 @@
                           <div class="spacer-xsmall"></div>
                       </div>
                       <div class="header_link-column">
+                          <div class="text-weight-xbold">EM ALTA</div>
+                          <div class="spacer-xsmall"></div>
+                      </div>
+                      <div class="header_link-column">
                           <div class="text-weight-xbold">SOBRE</div>
                           <div class="spacer-xsmall"></div>
                           <div class="header_link-list">
