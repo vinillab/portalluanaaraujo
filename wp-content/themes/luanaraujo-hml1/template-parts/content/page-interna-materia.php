@@ -74,10 +74,7 @@
                         <?php get_template_part("template-parts/common/share-icons"); ?>
                     </div>
                     <div class="author-wrapper">
-                        <?php
-                        $author_id = get_post_field("post_author", get_the_ID());
-                        echo get_avatar($author_id, 150, "", "", ["class" => "blog-post2-content_author-image"]);
-                        ?>
+
                         <div class="blog-post2-content_author-text">
                             <div class="text-block-2">
                                 <?php echo get_the_author_meta("description", $author_id); ?></div>
