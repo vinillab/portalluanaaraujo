@@ -5,7 +5,7 @@
 <section class="section_hero">
     <div class="padding-global">
         <div class="container-large">
-            <div class="padding-section-small">
+            <div class="padding-section-hero">
                 <div class="featured_component">
                     <div class="w-layout-grid featured-post_content">
                         <a id="w-node-_677c4f38-ab86-0d4d-26ef-89750b6de6b5-ce6f3a09"

@@ -5464,6 +5464,11 @@ figcaption {
   padding-right: 5%;
 }
 
+.padding-section-hero {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 3.25rem;
@@ -6704,6 +6709,11 @@ figcaption {
   .blog7_list {
     grid-row-gap: 3rem;
     grid-template-columns: 1fr;
+  }
+
+  .padding-section-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 
