@@ -110,7 +110,7 @@
                 </div>
             </div>
         </header>
-        <header class="section_posts">
+        <section class="section_posts">
             <div class="padding-global">
                 <div class="container-large">
                     <div class="padding-section-medium">
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
         <?php
                                         endif;
                                         wp_reset_postdata();

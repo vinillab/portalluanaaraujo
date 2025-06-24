@@ -7,7 +7,7 @@
         <?php get_template_part("template-parts/sections/home-destaque"); ?>
         <?php get_template_part("template-parts/sections/home-ultimas"); ?>
         <?php get_template_part("template-parts/sections/home-posts-categoria", null, ["category" => "ciencia-e-saude"]); ?>
-        <?php get_template_part("template-parts/sections/home-posts-categoria", null, ["category" => "vacinas"]); ?>
+        <?php get_template_part("template-parts/sections/home-posts-categoria", null, ["category" => "opiniao"]); ?>
 
     </main>
     <?php get_template_part("template-parts/common/footer"); ?>
