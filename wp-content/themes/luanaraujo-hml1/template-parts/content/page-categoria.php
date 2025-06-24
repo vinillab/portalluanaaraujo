@@ -11,13 +11,6 @@
                         <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
                             <div>InICIO</div>
                         </a>
-                        <div blocks-name="breadcrumb-divider" class="breadcrumb-divider w-embed"><svg width="16"
-                                 height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
-                            </svg></div>
-                        <a href="#" blocks-name="breadcrumb-link-2" class="breadcrumb-link w-inline-block">
-                            <div>CATEGORIA</div>
-                        </a>
                     </div>
                 </div>
                 <h2 class="heading-style-h2"><?php single_cat_title(); ?></h2>

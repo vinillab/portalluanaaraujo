@@ -21,7 +21,16 @@
                         <div class="spacer-medium"></div>
                         <h1 class="heading-style-h2"><?php the_title(); ?></h1>
                         <div class="spacer-xsmall"></div>
-                        <div class="text-size-large"><?php the_excerpt(); ?></div>
+                        <div class="text-size-large">
+                            <?php
+                            $linha_fina = get_field("linha_fina");
+                            if (!empty($linha_fina)) {
+                            	echo $linha_fina;
+                            } else {
+                            	the_excerpt();
+                            }
+                            ?>
+                        </div>
                     </div>
                     <div class="spacer-medium"></div>
                     <div class="blog-post-header2_content">
