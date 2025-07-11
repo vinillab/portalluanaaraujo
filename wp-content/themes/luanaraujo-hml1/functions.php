@@ -115,3 +115,32 @@ function enqueue_navbar_scroll_scripts()
 	wp_enqueue_script("navbar-scroll", get_template_directory_uri() . "/assets/js/navbar-scroll.js", [], "1.0.0", true);
 }
 add_action("wp_enqueue_scripts", "enqueue_navbar_scroll_scripts");
+
+// Add featured image column to posts list table
+add_filter("manage_posts_columns", "add_featured_image_column");
+function add_featured_image_column($columns)
+{
+	$new = [];
+	foreach ($columns as $key => $value) {
+		if ($key == "title") {
+			// or any other column you want to place it after
+			$new["featured_image"] = __("Featured Image");
+		}
+		$new[$key] = $value;
+	}
+	return $new;
+}
+
+add_action("manage_posts_custom_column", "display_featured_image_column", 10, 2);
+function display_featured_image_column($column, $post_id)
+{
+	switch ($column) {
+		case "featured_image":
+			if (has_post_thumbnail($post_id)) {
+				echo get_the_post_thumbnail($post_id, "thumbnail");
+			} else {
+				echo "–";
+			}
+			break;
+	}
+}
