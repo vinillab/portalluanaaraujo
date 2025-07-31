@@ -3,6 +3,8 @@
     <?php get_template_part("template-parts/common/global-styles"); ?>
 
     <main class="main-wrapper">
+        <?php get_template_part("template-parts/banners/super_large"); ?>
+
         <section class="section_materia-post">
             <div class="blog-post-component">
                 <div class="header-materia-wrapper">
@@ -58,6 +60,12 @@
                         <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
                         <?php endif; ?>
                     </div>
+                    <div class="banner_ad_component">
+                        <div class="text-block-3">Publicidade</div>
+                        <div class="banner_arroba-copy">
+                            <div class="cta47_background-image-wrapper"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="content-materia-wrapper">
@@ -87,6 +95,71 @@
                         <div class="blog-post2-content_author-text">
                             <div class="text-block-2">
                                 <?php echo get_the_author_meta("description", $author_id); ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-post4-content_component">
+                <div class="blog-post4-content_content">
+                    <div class="text-rich-text w-richtext">
+                        <?php the_content(); ?>
+                    </div>
+
+                    <div class="blog-post2-content_content-bottom">
+                        <div class="blog-post2-content_tag-list">
+                            <?php
+                            $post_tags = get_the_tags();
+                            if ($post_tags) {
+                            	foreach ($post_tags as $tag) {
+                            		echo '<a href="' . get_tag_link($tag->term_id) . '" class="blog-post2-content_tag-item w-inline-block">';
+                            		echo "<div>" . $tag->name . "</div>";
+                            		echo "</a>";
+                            	}
+                            }
+                            ?>
+                        </div>
+                        <?php get_template_part("template-parts/common/share-icons"); ?>
+                    </div>
+                    <div class="author-wrapper">
+
+                        <div class="blog-post2-content_author-text">
+                            <div class="text-block-2">
+                                <?php echo get_the_author_meta("description", $author_id); ?></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-sidebar">
+                    <div class="banner_ad_component sticky">
+                        <div class="text-block-3">Publicidade</div>
+                        <div class="banner_half_page">
+                            <div class="cta47_background-image-wrapper"></div>
+                        </div>
+                    </div>
+                    <div class="blog-post4-content_newsletter">
+                        <div class="margin-bottom margin-xsmall">
+                            <div class="heading-style-h6">Assine nossa Newsletter</div>
+                        </div>
+                        <div class="margin-bottom margin-xsmall">
+                            <p>Assine para receber as últimas postagens do blog em sua caixa de entrada toda semana.</p>
+                        </div>
+                        <div class="blog-post4-content_form w-form">
+                            <form id="email-form" name="email-form" data-name="Email Form" method="get"
+                                  data-wf-page-id="67d88b3fd5d49b3a1db94b24"
+                                  data-wf-element-id="6f76cfa1-610e-b10e-c6ec-0f63c6a32e8e" aria-label="Email Form">
+                                <div class="blog-post4-content_form-wrapper"><input class="form_input w-input"
+                                           maxlength="256" name="Email" data-name="Email"
+                                           placeholder="Digite seu e-mail" type="email" id="Email" required=""><input
+                                           type="submit" data-wait="Please wait..." class="button is-small w-button"
+                                           value="Assinar"></div>
+                                <div class="text-size-tiny">Ao assinar, você concorda com nossa Política de Privacidade.
+                                </div>
+                            </form>
+                            <div class="w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
+                                <div>Thank you! Your submission has been received!</div>
+                            </div>
+                            <div class="w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure">
+                                <div>Oops! Something went wrong while submitting the form.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
