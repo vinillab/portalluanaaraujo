@@ -5021,6 +5021,7 @@ figcaption {
 .navbar4_links-wrapper {
   justify-content: flex-start;
   align-items: center;
+  font-size: .85rem;
   display: flex;
 }
 
@@ -5044,7 +5045,12 @@ figcaption {
   font-weight: 700;
 }
 
-.navbar4_search_text, .navbar4_menu_text, .menu-separator {
+.navbar4_search_text {
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.navbar4_menu_text, .menu-separator {
   font-weight: 600;
 }
 
