@@ -5474,7 +5474,7 @@ figcaption {
   padding-top: 3rem;
   padding-left: 5%;
   padding-right: 5%;
-  display: none;
+  display: block;
 }
 
 .padding-section-hero {
