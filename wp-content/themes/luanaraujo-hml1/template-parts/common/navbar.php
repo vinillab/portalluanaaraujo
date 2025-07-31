@@ -8,31 +8,19 @@
                   class="navbar2_logo"></a>
          <nav role="navigation" id="w-node-_2afd9c1c-f011-b900-48dd-80bf4054e1fe-4054e1fa"
               class="navbar_menu is-page-height-tablet w-nav-menu">
-             <div data-delay="200" data-hover="true" data-w-id="2afd9c1c-f011-b900-48dd-80bf4054e1ff"
-                  class="navbar_menu-dropdown w-dropdown">
-                 <div class="navbar2_dropdwn-toggle w-dropdown-toggle">
-                     <div>EDITORIAS</div>
-                     <div class="dropdown-chevron w-embed"><svg width=" 100%" height=" 100%" viewBox="0 0 16 16"
-                              fill="none" xmlns="http://www.w3.org/2000/svg">
-                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                   d="M2.55806 6.29544C2.46043 6.19781 2.46043 6.03952 2.55806 5.94189L3.44195 5.058C3.53958 4.96037 3.69787 4.96037 3.7955 5.058L8.00001 9.26251L12.2045 5.058C12.3021 4.96037 12.4604 4.96037 12.5581 5.058L13.4419 5.94189C13.5396 6.03952 13.5396 6.19781 13.4419 6.29544L8.17678 11.5606C8.07915 11.6582 7.92086 11.6582 7.82323 11.5606L2.55806 6.29544Z"
-                                   fill="currentColor"></path>
-                         </svg></div>
-                 </div>
-                 <nav class="navbar2_dropdown-list w-dropdown-list">
-                     <?php
-                     $categories = get_categories([
-                     	"orderby" => "term_order",
-                     	"order" => "ASC",
-                     	"hide_empty" => false,
-                     ]);
 
-                     foreach ($categories as $category) {
-                     	echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="navbar2_dropdown-link w-dropdown-link">' . esc_html($category->name) . "</a>";
-                     }
-                     ?>
-                 </nav>
-             </div>
+             <?php
+             // Add individual category menu items
+             $categories = get_categories([
+             	"orderby" => "term_order",
+             	"order" => "ASC",
+             	"hide_empty" => false,
+             ]);
+
+             foreach ($categories as $category) {
+             	echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="navbar_link w-nav-link">' . esc_html($category->name) . "</a>";
+             }
+             ?>
              <a href="<?php echo esc_url(home_url("cop-30")); ?>" class="navbar_link w-nav-link">COP-30</a>
              <a href="<?php echo esc_url(home_url("bio")); ?>" class="navbar_link w-nav-link">BIO</a>
          </nav>
