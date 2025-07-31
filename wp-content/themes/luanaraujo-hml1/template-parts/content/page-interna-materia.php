@@ -39,7 +39,7 @@
                         <div class="blog-post-header2_content-bottom">
                             <div class="blog-post-header2_author-wrapper">
                                 <div class="blog-post-header2_author">
-                                    <div class="text-weight-medium">Por <?php
+                                    <div class="text-weight-medium"><?php
                                     $author_id = get_post_field("post_author", get_the_ID());
                                     echo get_the_author_meta("display_name", $author_id);
                                     ?></div>
