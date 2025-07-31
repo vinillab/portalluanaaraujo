@@ -9,7 +9,8 @@
                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_luana.png?v=1742321523"
                                        alt="" class="footer_logo"></a>
                           </div>
-                          <div class="w-layout-grid footer_menu-wrapper">
+                          <div id="w-node-ab46ef25-fc84-e1e4-318c-b040f239d057-f239d04b"
+                               class="w-layout-grid footer_menu-wrapper">
 
                               <div class="footer_link-column">
                                   <div class="text-weight-semibold">Editorias</div>
