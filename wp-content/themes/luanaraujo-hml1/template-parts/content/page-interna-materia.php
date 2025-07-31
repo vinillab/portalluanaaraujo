@@ -58,7 +58,12 @@
                     <div class="blog-post-header2_image-wrapper">
                         <?php if (has_post_thumbnail()): ?>
                         <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
+                        <img loading="lazy"
+                             src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
+                             alt="Imagem da notíciam não está disponível." class="blog-post-header2_image">
                         <?php endif; ?>
+
+
                     </div>
                     <div class="banner_ad_component">
                         <div class="text-block-3">Publicidade</div>
