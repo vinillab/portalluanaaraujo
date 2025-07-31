@@ -3,7 +3,7 @@
     <?php get_template_part("template-parts/common/global-styles"); ?>
 
     <main class="main-wrapper">
-        <?php get_template_part("template-parts/banners/super_large"); ?>
+        <?php get_template_part("template-parts/banners/super_large_interna"); ?>
 
         <section class="section_materia-post">
             <div class="blog-post-component">
