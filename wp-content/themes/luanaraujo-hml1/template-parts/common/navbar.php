@@ -21,7 +21,6 @@
              	echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="navbar_link w-nav-link">' . esc_html($category->name) . "</a>";
              }
              ?>
-             <a href="<?php echo esc_url(home_url("cop-30")); ?>" class="navbar_link w-nav-link">COP-30</a>
              <a href="<?php echo esc_url(home_url("bio")); ?>" class="navbar_link w-nav-link">BIO</a>
          </nav>
          <div id="w-node-_2afd9c1c-f011-b900-48dd-80bf4054e211-4054e1fa" class="navbar_button-wrapper">
