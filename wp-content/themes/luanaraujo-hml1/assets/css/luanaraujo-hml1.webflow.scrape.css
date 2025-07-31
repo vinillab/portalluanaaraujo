@@ -3038,21 +3038,12 @@ figcaption {
   color: var(--_primitives---colors--neutral-darkest);
 }
 
-.icon-embed-xxsmall {
+.icon-embed-xxsmall, .icon-embed-xsmall {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 1rem;
   height: 1rem;
-  display: flex;
-}
-
-.icon-embed-xsmall {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
   display: flex;
 }
 
@@ -4849,8 +4840,8 @@ figcaption {
   color: var(--principais--vermelho-escuro);
   align-items: center;
   width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   position: fixed;
 }
