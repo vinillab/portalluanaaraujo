@@ -29,7 +29,8 @@
                                             <?php else: ?>
                                             <img loading="lazy"
                                                  src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
-                                                 alt="" class="ultimas_featured_image">
+                                                 alt="Nenhuma imagem disponível. Imagem ilustrativa."
+                                                 class="ultimas_featured_image">
                                             <?php endif; ?>
                                         </div>
                                         <div class="spacer-small"></div>
@@ -59,6 +60,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="block-divider"></div>
                     <div class="blog10_featured-posts">
                         <div class="blog10_featured-list-wrapper">
                             <div class="blog10_featured-list">
