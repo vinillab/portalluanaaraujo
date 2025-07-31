@@ -1,7 +1,7 @@
   <footer class="footer_component" sym="true">
       <div class="padding-global">
           <div class="container-large">
-              <div class="padding-vertical padding-xxlarge">
+              <div class="padding-vertical padding-medium">
                   <div class="padding-bottom padding-small">
                       <div class="w-layout-grid footer_top-wrapper">
                           <div class="footer_left-wrapper">
