@@ -11,7 +11,7 @@
                             <div class="blog10_main-list">
                                 <?php
                                 $args = [
-                                	"posts_per_page" => 5,
+                                	"posts_per_page" => 4,
                                 	"orderby" => "date",
                                 	"order" => "DESC",
                                 	"post_status" => "publish",
