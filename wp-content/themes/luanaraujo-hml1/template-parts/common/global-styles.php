@@ -222,13 +222,15 @@
                grid-area: span 1 / span 3 / span 1 / span 3;
            }
 
-           .navbar4_main_link::after {
+           .navbar4_main_link::after,
+           .navbar_link::after {
                content: " | ";
-               margin: 0 .75rem;
+               margin: 0 .85rem;
                /* Adds space on both sides of the separator */
            }
 
-           .navbar4_main_link:last-child::after {
+           .navbar4_main_link:last-child::after,
+           .navbar_link:last-child::after {
                content: "";
                /* Removes the separator after the last item */
            }
