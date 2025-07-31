@@ -13,7 +13,6 @@
 
                               <div class="footer_link-column">
                                   <div class="text-weight-semibold">Editorias</div>
-                                  <div class="spacer-xsmall"></div>
                                   <div class="footer1_link-list">
                                       <?php
                                       $categories = get_categories([
@@ -30,7 +29,6 @@
                               </div>
                               <div class="footer_link-column">
                                   <div class="text-weight-semibold">Sobre</div>
-                                  <div class="spacer-xsmall"></div>
                                   <div class="footer1_link-list">
                                       <a href="<?php echo esc_url(home_url("bio")); ?>" class="footer_link">Luana
                                           araújo</a>
@@ -65,8 +63,8 @@
                           <div class="footer1_credit-text">© 2025 Portal Luana Araujo. Todos os direitos reservados.
                           </div>
                           <div class="w-layout-grid footer1_legal-list">
-                              <a href="#" class="footer_legal-link">Política de privacidade</a>
-                              <a href="#" class="footer_legal-link">Termos de serviço</a>
+                              <a href="<?php echo esc_url(home_url("politica-de-privacidade")); ?>"
+                                 class="footer_legal-link">Política de privacidade</a>
                           </div>
                       </div>
                   </div>
