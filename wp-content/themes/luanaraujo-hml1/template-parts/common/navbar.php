@@ -4,7 +4,8 @@
      <div class="navbar_container">
          <a href="<?php echo esc_url(home_url("")); ?>" aria-current="page" class="navbar_logo-link w-nav-brand"><img
                   loading="lazy"
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_luana.png?v=1742321523" alt=""
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-luanaaraujo.png?v=1742321523"
+                  alt="Logo com foto da Luana Araújo"
                   class="navbar2_logo"></a>
          <nav role="navigation" id="w-node-_2afd9c1c-f011-b900-48dd-80bf4054e1fe-4054e1fa"
               class="navbar_menu is-page-height-tablet w-nav-menu">
