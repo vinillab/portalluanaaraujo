@@ -6,7 +6,7 @@
                       <div class="w-layout-grid footer_top-wrapper">
                           <div class="footer_left-wrapper">
                               <a href="#" class="footer1logo-link w-nav-brand"><img loading="lazy"
-                                       src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_luana.png?v=1742321523"
+                                       src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-luanaaraujo.png?v=1742321523"
                                        alt="Logo Luana Araujo" class="footer_logo"></a>
                           </div>
                           <div id="w-node-ab46ef25-fc84-e1e4-318c-b040f239d057-f239d04b"
