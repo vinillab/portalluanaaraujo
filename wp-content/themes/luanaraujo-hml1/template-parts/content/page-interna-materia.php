@@ -107,6 +107,7 @@
                     <div class="text-rich-text w-richtext">
                         <?php the_content(); ?>
                     </div>
+                    <div class="spacer-large"></div>
                     <div class="blog-post2-content_content-bottom">
                         <div class="blog-post2-content_tag-list">
                             <?php
