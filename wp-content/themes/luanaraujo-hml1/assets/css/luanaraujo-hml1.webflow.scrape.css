@@ -3293,8 +3293,12 @@ figcaption {
 }
 
 .padding-section-small {
-  padding-top: 3rem;
+  padding-top: 1rem;
   padding-bottom: 3rem;
+}
+
+.padding-section-small.ultimas {
+  padding-top: 0;
 }
 
 .rl-styleguide_empty-box {
