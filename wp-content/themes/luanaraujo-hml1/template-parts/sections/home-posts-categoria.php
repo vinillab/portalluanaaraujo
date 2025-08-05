@@ -16,7 +16,7 @@ $category = get_category_by_slug($category_slug);
     </div>
     <div class="padding-global">
         <div class="container-large">
-            <div class="padding-section-medium">
+            <div class="padding-section-small">
                 <div class="posts_grid-wrapper">
                     <div class="w-layout-grid post-list">
                         <?php
