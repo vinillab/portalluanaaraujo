@@ -2567,9 +2567,13 @@ figcaption {
 }
 
 .heading-style-h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.heading-style-h2.interna-materia {
+  font-size: 2.5rem;
 }
 
 .rl-styleguide_heading {
@@ -2862,7 +2866,7 @@ figcaption {
 }
 
 .text-size-regular {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .text-weight-xbold {
@@ -4305,7 +4309,6 @@ figcaption {
   flex-flow: column;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
   padding-top: 2rem;
