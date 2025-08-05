@@ -8,7 +8,7 @@ $args = [
 
 get_header("", $args);
 
-get_template_part("template-parts/content/archive");
+get_template_part("template-parts/content/page-categoria");
 
 $args = [
 	"footer" => "footer/front-page",
