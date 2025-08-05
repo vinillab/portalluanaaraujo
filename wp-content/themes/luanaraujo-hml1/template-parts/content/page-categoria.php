@@ -70,6 +70,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="block-divider"></div>
                             <div class="blog10_featured-posts">
                                 <div class="blog10_featured-list-wrapper">
                                     <div class="blog10_featured-list">
