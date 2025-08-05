@@ -72,36 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="content-materia-wrapper">
-                <div class="max-width-large align-center">
-                    <div class="blog-post2-content_content">
-                        <div class="text-rich-text w-richtext">
-                            <?php the_content(); ?>
-                        </div>
-                    </div>
-                    <div class="blog-post2-content_content-bottom">
-                        <div class="blog-post2-content_tag-list">
-                            <?php
-                            $post_tags = get_the_tags();
-                            if ($post_tags) {
-                            	foreach ($post_tags as $tag) {
-                            		echo '<a href="' . get_tag_link($tag->term_id) . '" class="blog-post2-content_tag-item w-inline-block">';
-                            		echo "<div>" . $tag->name . "</div>";
-                            		echo "</a>";
-                            	}
-                            }
-                            ?>
-                        </div>
-                        <?php get_template_part("template-parts/common/share-icons"); ?>
-                    </div>
-                    <div class="author-wrapper">
-                        <div class="blog-post2-content_author-text">
-                            <div class="text-block-2">
-                                <?php echo get_the_author_meta("description", $author_id); ?></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="content-materia-sidebar">
                 <div class="content-post-content">
                     <div class="text-rich-text w-richtext">
