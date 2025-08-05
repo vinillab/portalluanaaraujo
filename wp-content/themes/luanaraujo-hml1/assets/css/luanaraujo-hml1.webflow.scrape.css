@@ -4614,7 +4614,7 @@ figcaption {
   display: flex;
 }
 
-.tag {
+.tag-class {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
   border: 1px solid var(--_primitives---colors--neutral-lightest);
@@ -4629,7 +4629,7 @@ figcaption {
   display: inline-flex;
 }
 
-.tag.is-text {
+.tag-class.is-text {
   border-style: none;
   border-color: var(--_primitives---opacity--transparent);
   background-color: var(--_primitives---opacity--transparent);
@@ -5488,7 +5488,7 @@ figcaption {
   padding-top: 3rem;
   padding-left: 5%;
   padding-right: 5%;
-  display: none;
+  display: block;
 }
 
 .padding-section-hero {
