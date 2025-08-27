@@ -5,7 +5,7 @@ defined("ABSPATH") || exit(); ?>
 <?php $args = wp_parse_args($args, [
 	"wfPage" => "67d48426a6d9dae6ce6f3a09",
 	"head" => "head/front-page",
-	"trackoing" => "head/tracking",
+	"tracking" => "head/tracking",
 	"body" => "",
 ]); ?>
 <html data-wf-page="<?php echo $args["wfPage"]; ?>" data-wf-site="67d48425a6d9dae6ce6f39c9"
