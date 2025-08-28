@@ -2,12 +2,18 @@
 // Exit if accessed directly
 defined("ABSPATH") || exit(); ?>
 <!DOCTYPE html>
-<?php $args = wp_parse_args($args, [
+<?php
+$args = wp_parse_args($args, [
 	"wfPage" => "67d48426a6d9dae6ce6f3a09",
 	"head" => "head/front-page",
 	"tracking" => "head/tracking",
 	"body" => "",
-]); ?>
+]);
+
+// Make args globally available for template parts
+global $header_args;
+$header_args = $args;
+?>
 <html data-wf-page="<?php echo $args["wfPage"]; ?>" data-wf-site="67d48425a6d9dae6ce6f39c9"
       <?php language_attributes(); ?>>
 

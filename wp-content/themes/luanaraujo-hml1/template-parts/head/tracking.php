@@ -11,9 +11,20 @@ gtag('js', new Date());
 gtag('config', 'G-X8PBC6SV1F');
 </script>
 
+
 <!-- Umami Analytics -->
-<script defer src="https://unami-jupiter-app.vercel.app/script.js"
-        data-website-id="34c65514-f4ab-4f39-a206-22829d48eeba"></script>
+<?php
+// Get data-tag from header args
+global $header_args;
+$data_tag = isset($header_args["data_tag"]) ? $header_args["data_tag"] : "tipo:organica;editoria:materia";
+?>
+<script
+        defer
+        src="https://unami-jupiter-app.vercel.app/script.js"
+        data-website-id="34c65514-f4ab-4f39-a206-22829d48eeba"
+        data-tag="<?php echo esc_attr($data_tag); ?>">
+</script>
+<!-- end Umami Analytics -->
 
 <!--UOL Code -->
 <script type="text/javascript">
