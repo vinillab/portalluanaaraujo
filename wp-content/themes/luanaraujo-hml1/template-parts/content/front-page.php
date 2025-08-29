@@ -13,6 +13,8 @@
         <?php get_template_part("template-parts/banners/super"); ?>
         <?php get_template_part("template-parts/sections/home-posts-categoria", null, ["category" => "saude-publica"]); ?>
         <?php get_template_part("template-parts/banners/super"); ?>
+        <?php get_template_part("template-parts/sections/home-posts-categoria", null, ["category" => "cop-30"]); ?>
+        <?php get_template_part("template-parts/banners/super"); ?>
         <?php get_template_part("template-parts/sections/home-posts-categoria", null, ["category" => "opiniao"]); ?>
         <?php get_template_part("template-parts/banners/mega"); ?>
 
