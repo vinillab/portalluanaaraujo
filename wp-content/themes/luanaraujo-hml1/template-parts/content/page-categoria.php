@@ -76,7 +76,8 @@
                                     <div class="blog10_featured-list">
                                         <?php // Remaining 4 posts
 
-                                        	while ($latest_posts->have_posts()):
+
+                                        while ($latest_posts->have_posts()):
                                         	$latest_posts->the_post(); ?>
                                         <div class="post_item" sym="true">
                                             <a href="<?php the_permalink(); ?>" class="post_item-link w-inline-block">
@@ -103,7 +104,10 @@
                                         </div>
                                         <?php
                                         endwhile;
-                                        wp_reset_postdata(); ?>
+                                        wp_reset_postdata();
+
+                                        endif;
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +207,8 @@
                 </div>
             </div>
         </section>
-        <?php endif; ?>
+        <?php endif;
+        ?>
 
     </main>
 
