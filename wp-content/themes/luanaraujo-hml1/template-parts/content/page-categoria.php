@@ -195,12 +195,13 @@
                                 ?>
                             </div>
                         </div>
-                        <?php if (count($total_posts) > 11):// Only show load more if we have more than 11 posts (5 featured + 6 in grid)
+                        <?php if (count($total_posts) > 10):// Only show load more if we have more than 10 posts (4 featured + 6 in grid)
                         	 ?>
                         <div class="margin-top margin-xxlarge">
-                            <div blocks-name="button-group" blocks-slot-children="ST331" class="button-group is-center">
-                                <a blocks-slot-item-canonical="EL14" blocks-name="button-4" href="#"
-                                   class="button load-more w-button">VER&nbsp;MAIS</a>
+                            <div class="button-group is-center">
+                                <a href="#"
+                                   class="button load-more w-button"
+                                   data-category-id="<?php echo get_query_var("cat"); ?>">VER&nbsp;MAIS</a>
                             </div>
                         </div>
                         <?php endif; ?>

@@ -289,7 +289,22 @@ if (is_category()) {
                         <div class="margin-top margin-xxlarge">
                             <div blocks-name="button-group" blocks-slot-children="ST331" class="button-group is-center">
                                 <a blocks-slot-item-canonical="EL14" blocks-name="button-4" href="#"
-                                   class="button load-more w-button">VER&nbsp;MAIS</a>
+                                   class="button load-more w-button"
+                                   <?php if (is_category()): ?>
+                                   data-category-id="<?php echo get_query_var("cat"); ?>"
+                                   <?php elseif (is_tag()): ?>
+                                   data-tag-id="<?php echo get_query_var("tag_id"); ?>"
+                                   <?php elseif (is_author()): ?>
+                                   data-author-id="<?php echo get_query_var("author"); ?>"
+                                   <?php elseif (is_date()): ?>
+                                   data-year="<?php echo get_query_var("year"); ?>"
+                                   <?php if (get_query_var("monthnum")): ?>data-month="<?php echo get_query_var("monthnum"); ?>"<?php endif; ?>
+                                   <?php if (get_query_var("day")): ?>data-day="<?php echo get_query_var("day"); ?>"<?php endif; ?>
+                                   <?php elseif (is_tax()): ?>
+                                   data-taxonomy="<?php echo get_queried_object()->taxonomy; ?>"
+                                   data-term-id="<?php echo get_queried_object()->term_id; ?>"
+                                   <?php endif; ?>>
+                                   VER&nbsp;MAIS</a>
                             </div>
                         </div>
                         <?php endif; ?>
