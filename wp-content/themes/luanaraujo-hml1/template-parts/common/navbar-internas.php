@@ -55,13 +55,12 @@
           </div>
           <div class="navbar4_links-wrapper">
               <a href="<?php echo esc_url(home_url("")); ?>" class="navbar4_main_link w-nav-link">InÍCIO</a>
-              <a href="<?php echo esc_url(home_url("em-alta")); ?>" class="navbar4_main_link w-nav-link">EM ALTA</a>
 
               <?php
               $categories = get_categories([
               	"orderby" => "name",
               	"order" => "ASC",
-              	"hide_empty" => 0,
+              	"hide_empty" => 1,
               ]);
 
               foreach ($categories as $category) {

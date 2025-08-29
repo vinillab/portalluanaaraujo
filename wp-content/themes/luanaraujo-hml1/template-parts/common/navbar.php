@@ -15,7 +15,7 @@
              $categories = get_categories([
              	"orderby" => "term_order",
              	"order" => "ASC",
-             	"hide_empty" => false,
+             	"hide_empty" => true,
              ]);
 
              foreach ($categories as $category) {
