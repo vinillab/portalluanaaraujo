@@ -23,13 +23,9 @@
                               ?>
                           </div>
                       </div>
+
                       <div class="header_link-column">
-                          <div class="text-weight-xbold">COP30</div>
-                          <div class="text-weight-xbold">EM ALTA</div>
-                          <div class="spacer-xsmall"></div>
-                      </div>
-                      <div class="header_link-column">
-                          <div class="text-weight-xbold">SOBRE</div>
+                          <div class="text-weight-xbold">BIO</div>
                           <div class="spacer-xsmall"></div>
                           <div class="header_link-list">
                               <a href="<?php echo esc_url(home_url("bio")); ?>" class="header_link-item">Luana
