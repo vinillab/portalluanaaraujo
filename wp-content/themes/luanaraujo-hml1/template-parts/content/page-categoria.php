@@ -24,7 +24,7 @@
                                     <div class="blog10_main-list">
                                         <?php
                                         $args = [
-                                        	"posts_per_page" => 5,
+                                        	"posts_per_page" => 4,
                                         	"orderby" => "date",
                                         	"order" => "DESC",
                                         	"post_status" => "publish",
@@ -124,14 +124,14 @@
                         ]);
 
                         // Only show grid if we have more than 5 posts
-                        if (count($total_posts) > 5): ?>
+                        if (count($total_posts) > 4): ?>
                         <div class="posts_grid-wrapper">
                             <div class="w-layout-grid post-list">
                                 <?php
                                 // Get posts excluding the first 5
                                 $args = [
                                 	"posts_per_page" => 6,
-                                	"offset" => 5,
+                                	"offset" => 4,
                                 	"orderby" => "date",
                                 	"order" => "DESC",
                                 	"post_status" => "publish",
