@@ -4,7 +4,7 @@
 
     <main class="main-wrapper">
         <header class="section_destaques_interna">
-            <div class="heading_section-wrapper tx-1">
+            <div class="heading_section-wrapper tx-1 container-large">
                 <div class="margin-bottom margin-tiny">
                     <div blocks-slot-children="ST232" blocks-name="blog-post-header3_breadcrumb"
                          class="breadcrumb_component">
@@ -102,7 +102,8 @@
                                             </a>
                                         </div>
                                         <?php
-                                        endwhile; ?>
+                                        endwhile;
+                                        wp_reset_postdata(); ?>
                                     </div>
                                 </div>
                             </div>
@@ -111,20 +112,20 @@
                 </div>
             </div>
         </header>
+        <?php
+        // Get total posts count for this category
+        $total_posts = get_posts([
+        	"cat" => get_query_var("cat"),
+        	"posts_per_page" => -1,
+        	"post_status" => "publish",
+        ]);
+
+        // Only show entire section if we have more than 4 posts
+        if (count($total_posts) > 4): ?>
         <section class="section_posts">
             <div class="padding-global">
                 <div class="container-large">
                     <div class="padding-section-medium">
-                        <?php
-                        // Get total posts count for this category
-                        $total_posts = get_posts([
-                        	"cat" => get_query_var("cat"),
-                        	"posts_per_page" => -1,
-                        	"post_status" => "publish",
-                        ]);
-
-                        // Only show grid if we have more than 5 posts
-                        if (count($total_posts) > 4): ?>
                         <div class="posts_grid-wrapper">
                             <div class="w-layout-grid post-list">
                                 <?php
@@ -198,16 +199,11 @@
                             </div>
                         </div>
                         <?php endif; ?>
-                        <?php endif;
-                        ?>
                     </div>
                 </div>
             </div>
         </section>
-        <?php
-                                        endif;
-                                        wp_reset_postdata();
-                                        ?>
+        <?php endif; ?>
 
     </main>
 

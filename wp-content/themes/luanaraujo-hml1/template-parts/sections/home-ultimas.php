@@ -1,6 +1,8 @@
 <section class="section_ultimas">
     <div class="heading_section-wrapper tx-1">
-        <h2 class="heading-style-h2">Últimas notícias</h2>
+        <div class="container-heading-wrapper">
+            <h2 class="heading-style-h2">Últimas notícias</h2>
+        </div>
     </div>
     <div class="padding-global">
         <div class="container-large">
