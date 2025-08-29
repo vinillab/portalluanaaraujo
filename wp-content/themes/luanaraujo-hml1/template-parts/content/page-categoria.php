@@ -4,19 +4,20 @@
 
     <main class="main-wrapper">
         <header class="section_destaques_interna">
-            <div class="heading_section-wrapper tx-1 container-large">
-                <div class="margin-bottom margin-tiny">
-                    <div blocks-slot-children="ST232" blocks-name="blog-post-header3_breadcrumb"
-                         class="breadcrumb_component">
-                        <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
-                            <div>InICIO</div>
-                        </a>
-                    </div>
-                </div>
-                <h2 class="heading-style-h2"><?php single_cat_title(); ?></h2>
-            </div>
+
             <div class="padding-global">
                 <div class="container-large">
+                    <div class="heading_section-wrapper tx-1 container-large">
+                        <div class="margin-bottom margin-tiny">
+                            <div blocks-slot-children="ST232" blocks-name="blog-post-header3_breadcrumb"
+                                 class="breadcrumb_component">
+                                <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
+                                    <div>InICIO</div>
+                                </a>
+                            </div>
+                        </div>
+                        <h2 class="heading-style-h2"><?php single_cat_title(); ?></h2>
+                    </div>
                     <div class="padding-section-small">
                         <div class="blog10_featured-blog">
                             <div class="blog10_main-post">
