@@ -5781,6 +5781,16 @@ figcaption {
   margin-left: 1rem;
 }
 
+.container-heading-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
 @media screen and (min-width: 1280px) {
   .navbar_component {
     padding-left: 5%;
@@ -7164,6 +7174,10 @@ figcaption {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
+  .container-heading-wrapper {
+    flex-flow: wrap;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -7425,6 +7439,11 @@ figcaption {
     grid-row-gap: 12px;
     flex-direction: column;
     grid-template-columns: 1fr;
+  }
+
+  .container-heading-wrapper {
+    grid-column-gap: .5rem;
+    grid-row-gap: .5rem;
   }
 }
 

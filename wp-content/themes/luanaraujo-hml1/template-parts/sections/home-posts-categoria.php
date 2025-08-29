@@ -4,7 +4,7 @@ $category = get_category_by_slug($category_slug);
 ?>
 <section id="blog-header-5" class="section_posts">
     <div class="heading_section-wrapper bg-3">
-        <div class="container-large">
+        <div class="container-heading-wrapper">
             <h2 class="heading-style-h2"><?php echo esc_html($category->name); ?></h2>
             <div class="button-heading-section">
                 <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">VEJA&nbsp;MAIS</a>
