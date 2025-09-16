@@ -35,3 +35,8 @@ $data_tag = isset($header_args["data_tag"]) ? $header_args["data_tag"] : "tipo:o
 })();
 </script>
 <script type="text/javascript" src="//tm.jsuol.com.br/uoltm.js?id=03yh0r" async></script>
+
+<script>
+window.pushAds = window.pushAds || [];
+</script>
+<script defer src=“https://tm.jsuol.com.br/modules/external/admanager/luana_araujo.js”></script>

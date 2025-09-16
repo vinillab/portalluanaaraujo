@@ -3,20 +3,20 @@
     <?php get_template_part("template-parts/common/global-styles"); ?>
 
     <main class="main-wrapper">
+
+        <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-editoria-topo"]); ?>
+
         <header class="section_destaques_interna">
             <div class="heading_section-wrapper tx-1">
                 <div class="margin-bottom margin-tiny">
-                    <div blocks-slot-children="ST232" blocks-name="blog-post-header3_breadcrumb"
-                         class="breadcrumb_component">
+                    <div class="breadcrumb_component">
                         <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
                             <div>InICIO</div>
                         </a>
                     </div>
                 </div>
                 <h2 class="heading-style-h2">
-                    <?php // Display appropriate title for different archive types
-
-if (is_category()) {
+                    <?php if (is_category()) {
                     	single_cat_title();
                     } elseif (is_tag()) {
                     	single_tag_title();
@@ -298,13 +298,15 @@ if (is_category()) {
                                    data-author-id="<?php echo get_query_var("author"); ?>"
                                    <?php elseif (is_date()): ?>
                                    data-year="<?php echo get_query_var("year"); ?>"
-                                   <?php if (get_query_var("monthnum")): ?>data-month="<?php echo get_query_var("monthnum"); ?>"<?php endif; ?>
-                                   <?php if (get_query_var("day")): ?>data-day="<?php echo get_query_var("day"); ?>"<?php endif; ?>
+                                   <?php if (get_query_var("monthnum")): ?>data-month="<?php echo get_query_var("monthnum"); ?>"
+                                   <?php endif; ?>
+                                   <?php if (get_query_var("day")): ?>data-day="<?php echo get_query_var("day"); ?>"
+                                   <?php endif; ?>
                                    <?php elseif (is_tax()): ?>
                                    data-taxonomy="<?php echo get_queried_object()->taxonomy; ?>"
                                    data-term-id="<?php echo get_queried_object()->term_id; ?>"
                                    <?php endif; ?>>
-                                   VER&nbsp;MAIS</a>
+                                    VER&nbsp;MAIS</a>
                             </div>
                         </div>
                         <?php endif; ?>
