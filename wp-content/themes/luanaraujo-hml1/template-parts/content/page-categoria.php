@@ -3,6 +3,8 @@
     <?php get_template_part("template-parts/common/global-styles"); ?>
 
     <main class="main-wrapper">
+
+        <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-editoria-topo"]); ?>
         <header class="section_destaques_interna">
 
             <div class="padding-global">
