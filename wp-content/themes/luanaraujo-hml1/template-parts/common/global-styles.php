@@ -234,6 +234,11 @@
                content: "";
                /* Removes the separator after the last item */
            }
+
+           /* Custom style for main wrapper with interna class */
+           .main-wrapper.interna {
+               padding-top: 52px;
+           }
            </style>
        </div>
        <div class="color-schemes w-embed">
