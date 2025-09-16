@@ -11,9 +11,8 @@
                 <div class="container-large">
                     <div class="heading_section-wrapper tx-1 container-large">
                         <div class="margin-bottom margin-tiny">
-                            <div blocks-slot-children="ST232" blocks-name="blog-post-header3_breadcrumb"
-                                 class="breadcrumb_component">
-                                <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
+                            <div class="breadcrumb_component">
+                                <a href="<?php echo home_url(); ?>" class="breadcrumb-link w-inline-block">
                                     <div>InICIO</div>
                                 </a>
                             </div>
