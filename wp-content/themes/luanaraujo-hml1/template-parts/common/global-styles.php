@@ -242,14 +242,16 @@
 
            /* Ads Height Shift Prevention */
            .banner_ad_component {
-               min-height: 250px; /* Adjust this value based on your typical ad height */
+               min-height: 250px;
+               /* Adjust this value based on your typical ad height */
                position: relative;
            }
 
            /* For mobile devices, use smaller minimum height */
            @media (max-width: 768px) {
                .banner_ad_component {
-                   min-height: 200px; /* Adjust for mobile ad sizes */
+                   min-height: 200px;
+                   /* Adjust for mobile ad sizes */
                }
            }
 
@@ -285,13 +287,14 @@
                0% {
                    background-position: -200% 0;
                }
+
                100% {
                    background-position: 200% 0;
                }
            }
 
            /* Ensure ad content is above the loading placeholder */
-           .banner_ad_component > * {
+           .banner_ad_component>* {
                position: relative;
                z-index: 2;
            }
@@ -300,7 +303,7 @@
        <div class="color-schemes w-embed">
            <style>
            /* Color Schemes Controls*/
-           <meta name="relume-color-schemes"content="false"/>.color-scheme-1 {
+           .color-scheme-1 {
                /*All sections should point to Color Scheme 1*/
            }
 

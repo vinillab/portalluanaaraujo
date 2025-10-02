@@ -1,328 +1,331 @@
-<div class="page-wrapper">
-    <?php get_template_part("template-parts/common/navbar-internas"); ?>
-    <?php get_template_part("template-parts/common/navbar"); ?>
-    <?php get_template_part("template-parts/common/global-styles"); ?>
+    <div class="page-wrapper">
+        <?php get_template_part("template-parts/common/navbar-internas"); ?>
+        <?php get_template_part("template-parts/common/navbar"); ?>
+        <?php get_template_part("template-parts/common/global-styles"); ?>
 
-    <main class="main-wrapper">
+        <main class="main-wrapper">
 
-        <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-editoria-topo"]); ?>
+            <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-editoria-topo"]); ?>
 
-        <header class="section_destaques_interna">
-            <div class="heading_section-wrapper tx-1">
-                <div class="margin-bottom margin-tiny">
-                    <div class="breadcrumb_component">
-                        <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
-                            <div>InICIO</div>
-                        </a>
-                    </div>
-                </div>
-                <h2 class="heading-style-h2">
-                    <?php if (is_category()) {
-                    	single_cat_title();
-                    } elseif (is_tag()) {
-                    	single_tag_title();
-                    } elseif (is_author()) {
-                    	echo get_the_author();
-                    } elseif (is_date()) {
-                    	if (is_year()) {
-                    		echo get_the_date("Y");
-                    	} elseif (is_month()) {
-                    		echo get_the_date("F Y");
-                    	} elseif (is_day()) {
-                    		echo get_the_date();
-                    	}
-                    } elseif (is_tax()) {
-                    	single_term_title();
-                    } else {
-                    	echo get_the_archive_title();
-                    } ?>
-                </h2>
-            </div>
-            <div class="padding-global">
-                <div class="container-large">
-                    <div class="padding-section-small">
-                        <div class="blog10_featured-blog">
-                            <div class="blog10_main-post">
-                                <div class="blog10_main-list-wrapper">
-                                    <div class="blog10_main-list">
-                                        <?php
-                                        // Build query args based on archive type
-                                        $query_args = [
-                                        	"posts_per_page" => 5,
-                                        	"orderby" => "date",
-                                        	"order" => "DESC",
-                                        	"post_status" => "publish",
-                                        ];
-
-                                        // Add appropriate taxonomy/author/date parameters
-                                        if (is_category()) {
-                                        	$query_args["cat"] = get_query_var("cat");
-                                        } elseif (is_tag()) {
-                                        	$query_args["tag_id"] = get_query_var("tag_id");
-                                        } elseif (is_author()) {
-                                        	$query_args["author"] = get_query_var("author");
-                                        } elseif (is_date()) {
-                                        	$query_args["year"] = get_query_var("year");
-                                        	$query_args["monthnum"] = get_query_var("monthnum");
-                                        	$query_args["day"] = get_query_var("day");
-                                        } elseif (is_tax()) {
-                                        	$query_args["tax_query"] = [
-                                        		[
-                                        			"taxonomy" => get_queried_object()->taxonomy,
-                                        			"field" => "term_id",
-                                        			"terms" => get_queried_object()->term_id,
-                                        		],
-                                        	];
-                                        }
-
-                                        $latest_posts = new WP_Query($query_args);
-
-                                        if ($latest_posts->have_posts()):
-                                        	// First post (featured)
-                                        	$latest_posts->the_post(); ?>
-                                        <div class="post_item">
-                                            <a href="<?php the_permalink(); ?>" class="post_item-link w-inline-block">
-                                                <div class="post_image-wrapper">
-                                                    <?php if (has_post_thumbnail()): ?>
-                                                    <?php the_post_thumbnail("large", ["class" => "ultimas_featured_image", "loading" => "lazy"]); ?>
-                                                    <?php else: ?>
-                                                    <img loading="lazy"
-                                                         src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
-                                                         alt="" class="ultimas_featured_image">
-                                                    <?php endif; ?>
-                                                </div>
-                                                <div class="spacer-small"></div>
-                                                <h3 class="heading-style-h5"><?php the_title(); ?></h3>
-                                                <div class="spacer-xsmall"></div>
-                                                <div class="text-size-regular">
-                                                    <?php echo wp_trim_words(get_the_excerpt(), 30); ?></div>
-                                                <div class="spacer-small"></div>
-                                                <div class="button-group">
-
-                                                    <div class="button is-link is-icon">
-                                                        <div>Saiba mais</div>
-                                                        <div class="icon-embed-xxsmall w-embed"><svg width="16"
-                                                                 height="16"
-                                                                 viewBox="0 0 16 16" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M6 3L11 8L6 13" stroke="CurrentColor"
-                                                                      stroke-width="1.5"></path>
-                                                            </svg></div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-divider"></div>
-                            <div class="blog10_featured-posts">
-                                <div class="blog10_featured-list-wrapper">
-                                    <div class="blog10_featured-list">
-                                        <?php // Remaining 4 posts
-
-                                        	while ($latest_posts->have_posts()):
-                                        	$latest_posts->the_post(); ?>
-                                        <div class="post_item" sym="true">
-                                            <a href="<?php the_permalink(); ?>" class="post_item-link w-inline-block">
-                                                <div class="spacer-xsmall"></div>
-                                                <h3 class="heading-style-h5"><?php the_title(); ?></h3>
-                                                <div class="spacer-xxsmall"></div>
-                                                <div class="text-size-regular">
-                                                    <?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>
-                                                <div class="spacer-small"></div>
-                                                <div class="button-group">
-
-                                                    <div class="button is-link is-icon">
-                                                        <div>Saiba mais</div>
-                                                        <div class="icon-embed-xxsmall w-embed"><svg width="16"
-                                                                 height="16"
-                                                                 viewBox="0 0 16 16" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M6 3L11 8L6 13" stroke="CurrentColor"
-                                                                      stroke-width="1.5"></path>
-                                                            </svg></div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <?php
-                                        endwhile; ?>
-                                    </div>
-                                </div>
-                            </div>
+            <header class="section_destaques_interna">
+                <div class="heading_section-wrapper tx-1">
+                    <div class="margin-bottom margin-tiny">
+                        <div class="breadcrumb_component">
+                            <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
+                                <div>InICIO</div>
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </header>
-        <section class="section_posts">
-            <div class="padding-global">
-                <div class="container-large">
-                    <div class="padding-section-medium">
-                        <?php
-                        // Get total posts count for this archive
-                        $total_posts_args = [
-                        	"posts_per_page" => -1,
-                        	"post_status" => "publish",
-                        ];
-
-                        // Add appropriate taxonomy/author/date parameters for total count
-                        if (is_category()) {
-                        	$total_posts_args["cat"] = get_query_var("cat");
+                    <h2 class="heading-style-h2">
+                        <?php if (is_category()) {
+                        	single_cat_title();
                         } elseif (is_tag()) {
-                        	$total_posts_args["tag_id"] = get_query_var("tag_id");
+                        	single_tag_title();
                         } elseif (is_author()) {
-                        	$total_posts_args["author"] = get_query_var("author");
+                        	echo get_the_author();
                         } elseif (is_date()) {
-                        	$total_posts_args["year"] = get_query_var("year");
-                        	$total_posts_args["monthnum"] = get_query_var("monthnum");
-                        	$total_posts_args["day"] = get_query_var("day");
+                        	if (is_year()) {
+                        		echo get_the_date("Y");
+                        	} elseif (is_month()) {
+                        		echo get_the_date("F Y");
+                        	} elseif (is_day()) {
+                        		echo get_the_date();
+                        	}
                         } elseif (is_tax()) {
-                        	$total_posts_args["tax_query"] = [
-                        		[
-                        			"taxonomy" => get_queried_object()->taxonomy,
-                        			"field" => "term_id",
-                        			"terms" => get_queried_object()->term_id,
-                        		],
-                        	];
-                        }
+                        	single_term_title();
+                        } else {
+                        	echo get_the_archive_title();
+                        } ?>
+                    </h2>
+                </div>
+                <div class="padding-global">
+                    <div class="container-large">
+                        <div class="padding-section-small">
+                            <div class="blog10_featured-blog">
+                                <div class="blog10_main-post">
+                                    <div class="blog10_main-list-wrapper">
+                                        <div class="blog10_main-list">
+                                            <?php
+                                            // Build query args based on archive type
+                                            $query_args = [
+                                            	"posts_per_page" => 5,
+                                            	"orderby" => "date",
+                                            	"order" => "DESC",
+                                            	"post_status" => "publish",
+                                            ];
 
-                        $total_posts = get_posts($total_posts_args);
+                                            // Add appropriate taxonomy/author/date parameters
+                                            if (is_category()) {
+                                            	$query_args["cat"] = get_query_var("cat");
+                                            } elseif (is_tag()) {
+                                            	$query_args["tag_id"] = get_query_var("tag_id");
+                                            } elseif (is_author()) {
+                                            	$query_args["author"] = get_query_var("author");
+                                            } elseif (is_date()) {
+                                            	$query_args["year"] = get_query_var("year");
+                                            	$query_args["monthnum"] = get_query_var("monthnum");
+                                            	$query_args["day"] = get_query_var("day");
+                                            } elseif (is_tax()) {
+                                            	$query_args["tax_query"] = [
+                                            		[
+                                            			"taxonomy" => get_queried_object()->taxonomy,
+                                            			"field" => "term_id",
+                                            			"terms" => get_queried_object()->term_id,
+                                            		],
+                                            	];
+                                            }
 
-                        // Only show grid if we have more than 5 posts
-                        if (count($total_posts) > 5): ?>
-                        <div class="posts_grid-wrapper">
-                            <div class="w-layout-grid post-list">
-                                <?php
-                                // Get posts excluding the first 5
-                                $more_posts_args = [
-                                	"posts_per_page" => 6,
-                                	"offset" => 5,
-                                	"orderby" => "date",
-                                	"order" => "DESC",
-                                	"post_status" => "publish",
-                                ];
+                                            $latest_posts = new WP_Query($query_args);
 
-                                // Add appropriate taxonomy/author/date parameters
-                                if (is_category()) {
-                                	$more_posts_args["cat"] = get_query_var("cat");
-                                } elseif (is_tag()) {
-                                	$more_posts_args["tag_id"] = get_query_var("tag_id");
-                                } elseif (is_author()) {
-                                	$more_posts_args["author"] = get_query_var("author");
-                                } elseif (is_date()) {
-                                	$more_posts_args["year"] = get_query_var("year");
-                                	$more_posts_args["monthnum"] = get_query_var("monthnum");
-                                	$more_posts_args["day"] = get_query_var("day");
-                                } elseif (is_tax()) {
-                                	$more_posts_args["tax_query"] = [
-                                		[
-                                			"taxonomy" => get_queried_object()->taxonomy,
-                                			"field" => "term_id",
-                                			"terms" => get_queried_object()->term_id,
-                                		],
-                                	];
-                                }
+                                            if ($latest_posts->have_posts()):
+                                            	// First post (featured)
+                                            	$latest_posts->the_post(); ?>
+                                            <div class="post_item">
+                                                <a href="<?php the_permalink(); ?>"
+                                                   class="post_item-link w-inline-block">
+                                                    <div class="post_image-wrapper">
+                                                        <?php if (has_post_thumbnail()): ?>
+                                                        <?php the_post_thumbnail("large", ["class" => "ultimas_featured_image", "loading" => "lazy"]); ?>
+                                                        <?php else: ?>
+                                                        <img loading="lazy"
+                                                             src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
+                                                             alt="" class="ultimas_featured_image">
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="spacer-small"></div>
+                                                    <h3 class="heading-style-h5"><?php the_title(); ?></h3>
+                                                    <div class="spacer-xsmall"></div>
+                                                    <div class="text-size-regular">
+                                                        <?php echo wp_trim_words(get_the_excerpt(), 30); ?></div>
+                                                    <div class="spacer-small"></div>
+                                                    <div class="button-group">
 
-                                $more_posts = new WP_Query($more_posts_args);
-
-                                if ($more_posts->have_posts()):
-                                	while ($more_posts->have_posts()):
-                                		$more_posts->the_post(); ?>
-                                <div class="post_item" sym="true">
-                                    <a href="<?php the_permalink(); ?>" class="post_item-link w-inline-block">
-                                        <div class="post_image-wrapper">
-                                            <?php if (has_post_thumbnail()): ?>
-                                            <?php the_post_thumbnail("large", ["class" => "post_image", "loading" => "lazy"]); ?>
-                                            <?php else: ?>
-                                            <img loading="lazy"
-                                                 src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
-                                                 alt="" class="post_image">
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="spacer-xsmall"></div>
-                                        <h3 class="heading-style-h5"><?php the_title(); ?></h3>
-                                        <div class="spacer-xxsmall"></div>
-                                        <div class="text-size-regular">
-                                            <?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>
-                                        <div class="spacer-small"></div>
-                                        <div class="button-group">
-                                            <div class="post_meta-wrapper">
-                                                <div class="post_main_category">
-                                                    <div><?php // Display appropriate taxonomy term
-
-                                		if (is_category() || is_tag() || is_tax()) {
-                                                    	$terms = get_the_terms(get_the_ID(), get_queried_object()->taxonomy);
-                                                    	if (!empty($terms) && !is_wp_error($terms)) {
-                                                    		echo esc_html($terms[0]->name);
-                                                    	}
-                                                    } else {
-                                                    	// For other archive types, show the first category
-                                                    	$categories = get_the_category();
-                                                    	if (!empty($categories)) {
-                                                    		echo esc_html($categories[0]->name);
-                                                    	}
-                                                    } ?></div>
-                                                </div>
-                                            </div>
-                                            <div class="button is-link is-icon">
-                                                <div>Saiba mais</div>
-                                                <div class="icon-embed-xxsmall w-embed"><svg width="16" height="16"
-                                                         viewBox="0 0 16 16" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M6 3L11 8L6 13" stroke="CurrentColor"
-                                                              stroke-width="1.5"></path>
-                                                    </svg></div>
+                                                        <div class="button is-link is-icon">
+                                                            <div>Saiba mais</div>
+                                                            <div class="icon-embed-xxsmall w-embed"><svg width="16"
+                                                                     height="16"
+                                                                     viewBox="0 0 16 16" fill="none"
+                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M6 3L11 8L6 13" stroke="CurrentColor"
+                                                                          stroke-width="1.5"></path>
+                                                                </svg></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
-                                <?php
-                                	endwhile;
-                                	wp_reset_postdata();
-                                endif;
-                                ?>
+                                <div class="block-divider"></div>
+                                <div class="blog10_featured-posts">
+                                    <div class="blog10_featured-list-wrapper">
+                                        <div class="blog10_featured-list">
+                                            <?php // Remaining 4 posts
+
+                                            	while ($latest_posts->have_posts()):
+                                            	$latest_posts->the_post(); ?>
+                                            <div class="post_item" sym="true">
+                                                <a href="<?php the_permalink(); ?>"
+                                                   class="post_item-link w-inline-block">
+                                                    <div class="spacer-xsmall"></div>
+                                                    <h3 class="heading-style-h5"><?php the_title(); ?></h3>
+                                                    <div class="spacer-xxsmall"></div>
+                                                    <div class="text-size-regular">
+                                                        <?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>
+                                                    <div class="spacer-small"></div>
+                                                    <div class="button-group">
+
+                                                        <div class="button is-link is-icon">
+                                                            <div>Saiba mais</div>
+                                                            <div class="icon-embed-xxsmall w-embed"><svg width="16"
+                                                                     height="16"
+                                                                     viewBox="0 0 16 16" fill="none"
+                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M6 3L11 8L6 13" stroke="CurrentColor"
+                                                                          stroke-width="1.5"></path>
+                                                                </svg></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <?php
+                                            endwhile; ?>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <?php if (count($total_posts) > 11):// Only show load more if we have more than 11 posts (5 featured + 6 in grid)
-                        	 ?>
-                        <div class="margin-top margin-xxlarge">
-                            <div blocks-name="button-group" blocks-slot-children="ST331" class="button-group is-center">
-                                <a blocks-slot-item-canonical="EL14" blocks-name="button-4" href="#"
-                                   class="button load-more w-button"
-                                   <?php if (is_category()): ?>
-                                   data-category-id="<?php echo get_query_var("cat"); ?>"
-                                   <?php elseif (is_tag()): ?>
-                                   data-tag-id="<?php echo get_query_var("tag_id"); ?>"
-                                   <?php elseif (is_author()): ?>
-                                   data-author-id="<?php echo get_query_var("author"); ?>"
-                                   <?php elseif (is_date()): ?>
-                                   data-year="<?php echo get_query_var("year"); ?>"
-                                   <?php if (get_query_var("monthnum")): ?>data-month="<?php echo get_query_var("monthnum"); ?>"
-                                   <?php endif; ?>
-                                   <?php if (get_query_var("day")): ?>data-day="<?php echo get_query_var("day"); ?>"
-                                   <?php endif; ?>
-                                   <?php elseif (is_tax()): ?>
-                                   data-taxonomy="<?php echo get_queried_object()->taxonomy; ?>"
-                                   data-term-id="<?php echo get_queried_object()->term_id; ?>"
-                                   <?php endif; ?>>
-                                    VER&nbsp;MAIS</a>
-                            </div>
-                        </div>
-                        <?php endif; ?>
-                        <?php endif;
-                        ?>
                     </div>
                 </div>
-            </div>
-        </section>
-        <?php
-                                        endif;
-                                        wp_reset_postdata();
-                                        ?>
+            </header>
+            <section class="section_posts">
+                <div class="padding-global">
+                    <div class="container-large">
+                        <div class="padding-section-medium">
+                            <?php
+                            // Get total posts count for this archive
+                            $total_posts_args = [
+                            	"posts_per_page" => -1,
+                            	"post_status" => "publish",
+                            ];
 
-    </main>
+                            // Add appropriate taxonomy/author/date parameters for total count
+                            if (is_category()) {
+                            	$total_posts_args["cat"] = get_query_var("cat");
+                            } elseif (is_tag()) {
+                            	$total_posts_args["tag_id"] = get_query_var("tag_id");
+                            } elseif (is_author()) {
+                            	$total_posts_args["author"] = get_query_var("author");
+                            } elseif (is_date()) {
+                            	$total_posts_args["year"] = get_query_var("year");
+                            	$total_posts_args["monthnum"] = get_query_var("monthnum");
+                            	$total_posts_args["day"] = get_query_var("day");
+                            } elseif (is_tax()) {
+                            	$total_posts_args["tax_query"] = [
+                            		[
+                            			"taxonomy" => get_queried_object()->taxonomy,
+                            			"field" => "term_id",
+                            			"terms" => get_queried_object()->term_id,
+                            		],
+                            	];
+                            }
 
-    <?php get_template_part("template-parts/common/footer"); ?>
-</div>
+                            $total_posts = get_posts($total_posts_args);
+
+                            // Only show grid if we have more than 5 posts
+                            if (count($total_posts) > 5): ?>
+                            <div class="posts_grid-wrapper">
+                                <div class="w-layout-grid post-list">
+                                    <?php
+                                    // Get posts excluding the first 5
+                                    $more_posts_args = [
+                                    	"posts_per_page" => 6,
+                                    	"offset" => 5,
+                                    	"orderby" => "date",
+                                    	"order" => "DESC",
+                                    	"post_status" => "publish",
+                                    ];
+
+                                    // Add appropriate taxonomy/author/date parameters
+                                    if (is_category()) {
+                                    	$more_posts_args["cat"] = get_query_var("cat");
+                                    } elseif (is_tag()) {
+                                    	$more_posts_args["tag_id"] = get_query_var("tag_id");
+                                    } elseif (is_author()) {
+                                    	$more_posts_args["author"] = get_query_var("author");
+                                    } elseif (is_date()) {
+                                    	$more_posts_args["year"] = get_query_var("year");
+                                    	$more_posts_args["monthnum"] = get_query_var("monthnum");
+                                    	$more_posts_args["day"] = get_query_var("day");
+                                    } elseif (is_tax()) {
+                                    	$more_posts_args["tax_query"] = [
+                                    		[
+                                    			"taxonomy" => get_queried_object()->taxonomy,
+                                    			"field" => "term_id",
+                                    			"terms" => get_queried_object()->term_id,
+                                    		],
+                                    	];
+                                    }
+
+                                    $more_posts = new WP_Query($more_posts_args);
+
+                                    if ($more_posts->have_posts()):
+                                    	while ($more_posts->have_posts()):
+                                    		$more_posts->the_post(); ?>
+                                    <div class="post_item" sym="true">
+                                        <a href="<?php the_permalink(); ?>" class="post_item-link w-inline-block">
+                                            <div class="post_image-wrapper">
+                                                <?php if (has_post_thumbnail()): ?>
+                                                <?php the_post_thumbnail("large", ["class" => "post_image", "loading" => "lazy"]); ?>
+                                                <?php else: ?>
+                                                <img loading="lazy"
+                                                     src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
+                                                     alt="" class="post_image">
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="spacer-xsmall"></div>
+                                            <h3 class="heading-style-h5"><?php the_title(); ?></h3>
+                                            <div class="spacer-xxsmall"></div>
+                                            <div class="text-size-regular">
+                                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>
+                                            <div class="spacer-small"></div>
+                                            <div class="button-group">
+                                                <div class="post_meta-wrapper">
+                                                    <div class="post_main_category">
+                                                        <div><?php // Display appropriate taxonomy term
+
+                                    		if (is_category() || is_tag() || is_tax()) {
+                                                        	$terms = get_the_terms(get_the_ID(), get_queried_object()->taxonomy);
+                                                        	if (!empty($terms) && !is_wp_error($terms)) {
+                                                        		echo esc_html($terms[0]->name);
+                                                        	}
+                                                        } else {
+                                                        	// For other archive types, show the first category
+                                                        	$categories = get_the_category();
+                                                        	if (!empty($categories)) {
+                                                        		echo esc_html($categories[0]->name);
+                                                        	}
+                                                        } ?></div>
+                                                    </div>
+                                                </div>
+                                                <div class="button is-link is-icon">
+                                                    <div>Saiba mais</div>
+                                                    <div class="icon-embed-xxsmall w-embed"><svg width="16" height="16"
+                                                             viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M6 3L11 8L6 13" stroke="CurrentColor"
+                                                                  stroke-width="1.5"></path>
+                                                        </svg></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <?php
+                                    	endwhile;
+                                    	wp_reset_postdata();
+                                    endif;
+                                    ?>
+                                </div>
+                            </div>
+                            <?php if (count($total_posts) > 11):// Only show load more if we have more than 11 posts (5 featured + 6 in grid)
+                            	 ?>
+                            <div class="margin-top margin-xxlarge">
+                                <div blocks-name="button-group" blocks-slot-children="ST331"
+                                     class="button-group is-center">
+                                    <a blocks-slot-item-canonical="EL14" blocks-name="button-4" href="#"
+                                       class="button load-more w-button"
+                                       <?php if (is_category()): ?>
+                                       data-category-id="<?php echo get_query_var("cat"); ?>"
+                                       <?php elseif (is_tag()): ?>
+                                       data-tag-id="<?php echo get_query_var("tag_id"); ?>"
+                                       <?php elseif (is_author()): ?>
+                                       data-author-id="<?php echo get_query_var("author"); ?>"
+                                       <?php elseif (is_date()): ?>
+                                       data-year="<?php echo get_query_var("year"); ?>"
+                                       <?php if (get_query_var("monthnum")): ?>data-month="<?php echo get_query_var("monthnum"); ?>"
+                                       <?php endif; ?>
+                                       <?php if (get_query_var("day")): ?>data-day="<?php echo get_query_var("day"); ?>"
+                                       <?php endif; ?>
+                                       <?php elseif (is_tax()): ?>
+                                       data-taxonomy="<?php echo get_queried_object()->taxonomy; ?>"
+                                       data-term-id="<?php echo get_queried_object()->term_id; ?>"
+                                       <?php endif; ?>>
+                                        VER&nbsp;MAIS</a>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+                            <?php endif;
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <?php
+                                            endif;
+                                            wp_reset_postdata();
+                                            ?>
+
+        </main>
+
+        <?php get_template_part("template-parts/common/footer"); ?>
+    </div>
