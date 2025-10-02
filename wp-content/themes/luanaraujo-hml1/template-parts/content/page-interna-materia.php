@@ -67,7 +67,7 @@
                                  alt="Imagem da notíciam não está disponível." class="blog-post-header2_image">
                             <?php endif; ?>
                         </div>
-                        <div class="banner_ad_component">
+                        <div class="banner_interna_materia_wrapper">
 
                             <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-materia-imagem"]); ?>
 

@@ -1,4 +1,4 @@
  <div class="banner_ad_component sticky">
-     <div class="text-block-3">Publicidade</div>
-     <?php echo dfp_tag(["id" => "ad-materia-sidebar"]); ?>
+     <div class="text-block-3">Continua após a Publicidade</div>
+     <?php dfp_tag(["id" => $args["ad_id"] ?? "ad-materia-sidebar"]); ?>
  </div>
