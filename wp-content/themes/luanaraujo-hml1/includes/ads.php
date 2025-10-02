@@ -1,28 +1,24 @@
 <?php
 
 /**
- * UOL Ads - Generate a DFP tag for advertisements
+ * UOL Ads - pushAds integration
  *
- * @param array $args Array containing the 'id' for the ad tag
- * @return void Outputs HTML directly
+ * Usage: dfp_tag(['id' => 'ad-home-topo']);
+ * This function ECHOs the markup; don't echo its return.
  */
 if (!function_exists("dfp_tag")) {
 	function dfp_tag($args)
 	{
-		// Validate input
-		if (!isset($args["id"]) || empty($args["id"])) {
+		if (empty($args["id"])) {
 			return;
 		}
-
 		$tag_id = esc_attr($args["id"]);
 		?>
-<div class="uolads" id="<?php echo $tag_id; ?>">
-    <script>
-    window.uolads && window.uolads.push({
-        id: "<?php echo $tag_id; ?>"
-    });
-    </script>
-</div>
+<div id="<?php echo $tag_id; ?>"></div>
+<script>
+window.pushAds = window.pushAds || [];
+window.pushAds.push("<?php echo $tag_id; ?>");
+</script>
 <?php
 	}
 }

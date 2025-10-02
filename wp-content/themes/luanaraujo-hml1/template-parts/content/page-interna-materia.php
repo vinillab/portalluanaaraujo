@@ -1,5 +1,6 @@
 <div class="page-wrapper">
     <?php get_template_part("template-parts/common/navbar-internas"); ?>
+    <?php get_template_part("template-parts/common/navbar"); ?>
     <?php get_template_part("template-parts/common/global-styles"); ?>
 
     <main class="main-wrapper interna">
@@ -65,7 +66,6 @@
                         <?php endif; ?>
                     </div>
                     <div class="banner_ad_component">
-                        <div class="text-block-3">Publicidade</div>
 
                         <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-materia-imagem"]); ?>
 
@@ -105,95 +105,94 @@
                     <?php get_template_part("template-parts/banners/sidebar-interna"); ?>
                 </div>
             </div>
-</div>
-</section>
+        </section>
 
-<section class="section_related">
-    <div class="padding-global">
-        <div class="container-large">
-            <div class="padding-section-medium">
-                <div class="margin-bottom margin-xxlarge">
-                    <div class="text-align-center">
-                        <div class="max-width-large align-center">
-                            <div class="margin-bottom margin-small">
-                                <h2 class="heading-style-h3">Talvez você goste também de:</h2>
+        <section class="section_related">
+            <div class="padding-global">
+                <div class="container-large">
+                    <div class="padding-section-medium">
+                        <div class="margin-bottom margin-xxlarge">
+                            <div class="text-align-center">
+                                <div class="max-width-large align-center">
+                                    <div class="margin-bottom margin-small">
+                                        <h2 class="heading-style-h3">Talvez você goste também de:</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="posts_grid-wrapper">
+                            <div class="w-layout-grid post-list">
+                                <?php
+                                // Get current post categories
+                                $categories = get_the_category();
+
+                                if ($categories) {
+                                	$category_ids = [];
+                                	foreach ($categories as $category) {
+                                		$category_ids[] = $category->term_id;
+                                	}
+
+                                	// Query related posts
+                                	$related_args = [
+                                		"category__in" => $category_ids,
+                                		"post__not_in" => [get_the_ID()],
+                                		"posts_per_page" => 3,
+                                		"orderby" => "rand",
+                                	];
+
+                                	$related_query = new WP_Query($related_args);
+
+                                	if ($related_query->have_posts()) {
+                                		while ($related_query->have_posts()) {
+                                			$related_query->the_post(); ?>
+                                <div class="post_item" sym="true">
+                                    <a href="<?php the_permalink(); ?>" class="post_item-link w-inline-block">
+                                        <div class="post_image-wrapper">
+                                            <?php if (has_post_thumbnail()): ?>
+                                            <?php the_post_thumbnail("medium", ["class" => "post_image", "loading" => "lazy"]); ?>
+                                            <?php else: ?>
+                                            <img loading="lazy"
+                                                 src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
+                                                 alt="" class="post_image">
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="spacer-xsmall"></div>
+                                        <h3 class="heading-style-h5"><?php the_title(); ?></h3>
+                                        <div class="spacer-xxsmall"></div>
+                                        <div class="text-size-regular"><?php echo get_the_excerpt(); ?></div>
+                                        <div class="spacer-small"></div>
+                                        <div class="button-group">
+                                            <div class="post_meta-wrapper">
+                                                <div class="post_main_category">
+                                                    <div><?php echo get_the_category()[0]->name; ?></div>
+                                                </div>
+                                            </div>
+                                            <div class="button is-link is-icon">
+                                                <div>Saiba mais</div>
+                                                <div class="icon-embed-xxsmall w-embed"><svg width="16" height="16"
+                                                         viewBox="0 0 16 16" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 3L11 8L6 13" stroke="CurrentColor"
+                                                              stroke-width="1.5"></path>
+                                                    </svg></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <?php
+                                		}
+                                		wp_reset_postdata();
+                                	}
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="posts_grid-wrapper">
-                    <div class="w-layout-grid post-list">
-                        <?php
-                        // Get current post categories
-                        $categories = get_the_category();
-
-                        if ($categories) {
-                        	$category_ids = [];
-                        	foreach ($categories as $category) {
-                        		$category_ids[] = $category->term_id;
-                        	}
-
-                        	// Query related posts
-                        	$related_args = [
-                        		"category__in" => $category_ids,
-                        		"post__not_in" => [get_the_ID()],
-                        		"posts_per_page" => 3,
-                        		"orderby" => "rand",
-                        	];
-
-                        	$related_query = new WP_Query($related_args);
-
-                        	if ($related_query->have_posts()) {
-                        		while ($related_query->have_posts()) {
-                        			$related_query->the_post(); ?>
-                        <div class="post_item" sym="true">
-                            <a href="<?php the_permalink(); ?>" class="post_item-link w-inline-block">
-                                <div class="post_image-wrapper">
-                                    <?php if (has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail("medium", ["class" => "post_image", "loading" => "lazy"]); ?>
-                                    <?php else: ?>
-                                    <img loading="lazy"
-                                         src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
-                                         alt="" class="post_image">
-                                    <?php endif; ?>
-                                </div>
-                                <div class="spacer-xsmall"></div>
-                                <h3 class="heading-style-h5"><?php the_title(); ?></h3>
-                                <div class="spacer-xxsmall"></div>
-                                <div class="text-size-regular"><?php echo get_the_excerpt(); ?></div>
-                                <div class="spacer-small"></div>
-                                <div class="button-group">
-                                    <div class="post_meta-wrapper">
-                                        <div class="post_main_category">
-                                            <div><?php echo get_the_category()[0]->name; ?></div>
-                                        </div>
-                                    </div>
-                                    <div class="button is-link is-icon">
-                                        <div>Saiba mais</div>
-                                        <div class="icon-embed-xxsmall w-embed"><svg width="16" height="16"
-                                                 viewBox="0 0 16 16" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M6 3L11 8L6 13" stroke="CurrentColor"
-                                                      stroke-width="1.5"></path>
-                                            </svg></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <?php
-                        		}
-                        		wp_reset_postdata();
-                        	}
-                        }
-                        ?>
-                    </div>
-                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-</main>
-<?php get_template_part("template-parts/common/footer"); ?>
+    </main>
+    <?php get_template_part("template-parts/common/footer"); ?>
 
 </div>

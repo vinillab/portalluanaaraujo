@@ -7,39 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Initially hide the internal navbar
 	if (navbarInternas) {
-		if (isHomePage) {
-			// Home page behavior
-			navbarInternas.style.display = "none";
+		// Always apply scroll behavior regardless of page type
+		navbarInternas.style.display = "none";
 
-			window.addEventListener("scroll", function () {
-				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		window.addEventListener("scroll", function () {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-				if (scrollTop > scrollThreshold) {
-					// Show internal navbar when scrolled past threshold
-					navbarInternas.style.display = "block";
-					navbarInternas.style.position = "fixed";
-					navbarInternas.style.top = "0";
-					navbarInternas.style.left = "0";
-					navbarInternas.style.right = "0";
-					navbarInternas.style.zIndex = "1000";
-					navbarInternas.style.backgroundColor = "#fff"; // Add background color
-					navbarInternas.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)"; // Add subtle shadow
-				} else {
-					// Hide internal navbar when at top
-					navbarInternas.style.display = "none";
-				}
+			if (scrollTop > scrollThreshold) {
+				// Show internal navbar when scrolled past threshold
+				navbarInternas.style.display = "block";
+				navbarInternas.style.position = "fixed";
+				navbarInternas.style.top = "0";
+				navbarInternas.style.left = "0";
+				navbarInternas.style.right = "0";
+				navbarInternas.style.zIndex = "1000";
+				navbarInternas.style.backgroundColor = "#fff"; // Add background color
+				navbarInternas.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)"; // Add subtle shadow
+			} else {
+				// Hide internal navbar when at top
+				navbarInternas.style.display = "none";
+			}
 
-				lastScrollTop = scrollTop;
-			});
-		} else {
-			// Other pages behavior - always fixed
-			navbarInternas.style.position = "fixed";
-			navbarInternas.style.top = "0";
-			navbarInternas.style.left = "0";
-			navbarInternas.style.right = "0";
-			navbarInternas.style.zIndex = "1000";
-			navbarInternas.style.backgroundColor = "#fff";
-			navbarInternas.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
-		}
+			lastScrollTop = scrollTop;
+		});
 	}
 });

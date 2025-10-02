@@ -39,4 +39,4 @@ $data_tag = isset($header_args["data_tag"]) ? $header_args["data_tag"] : "tipo:o
 <script>
 window.pushAds = window.pushAds || [];
 </script>
-<script defer src=“https://tm.jsuol.com.br/modules/external/admanager/luana_araujo.js”></script>
+<script defer src="https://tm.jsuol.com.br/modules/external/admanager/luana_araujo.js"></script>

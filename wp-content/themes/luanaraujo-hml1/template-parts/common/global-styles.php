@@ -239,6 +239,62 @@
            .main-wrapper.interna {
                padding-top: 52px;
            }
+
+           /* Ads Height Shift Prevention */
+           .banner_ad_component {
+               min-height: 250px; /* Adjust this value based on your typical ad height */
+               position: relative;
+           }
+
+           /* For mobile devices, use smaller minimum height */
+           @media (max-width: 768px) {
+               .banner_ad_component {
+                   min-height: 200px; /* Adjust for mobile ad sizes */
+               }
+           }
+
+           /* For very small screens */
+           @media (max-width: 480px) {
+               .banner_ad_component {
+                   min-height: 150px;
+               }
+           }
+
+           /* Optional: Add a loading placeholder */
+           .banner_ad_component::before {
+               content: "";
+               position: absolute;
+               top: 0;
+               left: 0;
+               right: 0;
+               bottom: 0;
+               background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+               background-size: 200% 100%;
+               animation: loading-shimmer 1.5s infinite;
+               opacity: 0.3;
+               z-index: 1;
+           }
+
+           /* Hide the loading placeholder when ad is loaded */
+           .banner_ad_component.loaded::before {
+               display: none;
+           }
+
+           /* Shimmer animation for loading effect */
+           @keyframes loading-shimmer {
+               0% {
+                   background-position: -200% 0;
+               }
+               100% {
+                   background-position: 200% 0;
+               }
+           }
+
+           /* Ensure ad content is above the loading placeholder */
+           .banner_ad_component > * {
+               position: relative;
+               z-index: 2;
+           }
            </style>
        </div>
        <div class="color-schemes w-embed">
