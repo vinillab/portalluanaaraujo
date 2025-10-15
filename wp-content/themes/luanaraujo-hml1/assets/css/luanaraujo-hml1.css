@@ -7519,4 +7519,11 @@ figcaption {
   }
 }
 
+/* Custom styles - Desktop only navbar */
+@media screen and (max-width: 991px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
 /* --- END luanaraujo-hml1.webflow.shared.52b326f77.css --- */

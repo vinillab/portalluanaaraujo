@@ -1,7 +1,7 @@
-  <div data-animation="default" class="navbar4_component w-nav" data-easing2="ease"
-       fs-scrolldisable-element="smart-nav" data-easing="ease-in" data-collapse="all"
-       data-w-id="50caee5b-1a48-9cd4-aaa4-381dc22b2599" role="banner" data-no-scroll="1" data-duration="400"
-       data-doc-height="1" sym="true">
+ <div data-animation="default" class="navbar4_component desktop-only w-nav" data-easing2="ease"
+      fs-scrolldisable-element="smart-nav" data-easing="ease-in" data-collapse="all"
+      data-w-id="50caee5b-1a48-9cd4-aaa4-381dc22b2599" role="banner" data-no-scroll="1" data-duration="400"
+      data-doc-height="1" sym="true">
       <div class="navbar4_container">
           <div class="navbar4_wrapper">
               <nav role="navigation" class="navbar4_menu w-nav-menu">
