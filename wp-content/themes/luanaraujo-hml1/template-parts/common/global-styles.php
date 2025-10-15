@@ -222,17 +222,21 @@
                grid-area: span 1 / span 3 / span 1 / span 3;
            }
 
-           .navbar4_main_link::after,
-           .navbar_link::after {
-               content: " | ";
-               margin: 0 .85rem;
-               /* Adds space on both sides of the separator */
-           }
+           /* Navbar separators - Desktop only */
+           @media screen and (min-width: 992px) {
 
-           .navbar4_main_link:last-child::after,
-           .navbar_link:last-child::after {
-               content: "";
-               /* Removes the separator after the last item */
+               .navbar4_main_link::after,
+               .navbar_link::after {
+                   content: " | ";
+                   margin: 0 .85rem;
+                   /* Adds space on both sides of the separator */
+               }
+
+               .navbar4_main_link:last-child::after,
+               .navbar_link:last-child::after {
+                   content: "";
+                   /* Removes the separator after the last item */
+               }
            }
 
            /* Custom style for main wrapper with interna class */

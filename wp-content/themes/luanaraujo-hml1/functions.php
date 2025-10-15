@@ -82,24 +82,6 @@ function define_post_types_for_luanaraujo_hml1()
 
 add_action("init", "define_post_types_for_luanaraujo_hml1");
 
-function udesly_theme_set_images_items_lightbox_script($id, $field, $type)
-{
-	$images = udesly_get_custom_post_field($id, $field, $type);
-
-	$items_to_json = [];
-
-	foreach ($images as $imageItem) {
-		$image = $imageItem["image"];
-		$items_to_json[] = [
-			"type" => "image",
-			"url" => $image->src,
-			"caption" => $image->caption,
-		];
-	}
-
-	echo json_encode($items_to_json);
-}
-
 function get_first_category_name()
 {
 	$categories = get_the_category();
@@ -114,8 +96,8 @@ function get_first_category_name()
 
 function enqueue_navbar_scroll_scripts()
 {
-	wp_enqueue_style("navbar-scroll", get_template_directory_uri() . "/assets/css/navbar-scroll.css", [], "1.0.2");
-	wp_enqueue_script("navbar-scroll", get_template_directory_uri() . "/assets/js/navbar-scroll.js", [], "1.0.2", true);
+	wp_enqueue_style("navbar-scroll", get_template_directory_uri() . "/assets/css/navbar-scroll.css", [], "1.0.3");
+	wp_enqueue_script("navbar-scroll", get_template_directory_uri() . "/assets/js/navbar-scroll.js", [], "1.0.3", true);
 }
 add_action("wp_enqueue_scripts", "enqueue_navbar_scroll_scripts");
 
