@@ -64,6 +64,8 @@
               }
               ?>
 
+              <a href="<?php echo esc_url(home_url("bio")); ?>" class="navbar4_main_link w-nav-link">BIO</a>
+
           </div>
           <div class="navbar4_button-wrapper">
               <div class="navbar4_search_text">PESQUISAR</div>

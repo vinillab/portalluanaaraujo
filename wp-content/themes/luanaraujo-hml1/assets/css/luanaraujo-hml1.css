@@ -1,4 +1,4 @@
-/* --- BEGIN luanaraujo-hml1.webflow.shared.1bd4cfae3.css --- */
+/* --- BEGIN luanaraujo-hml1.webflow.shared.52b326f77.css --- */
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3233,6 +3233,7 @@ figcaption {
 }
 
 .text-rich-text p {
+  text-align: justify;
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
@@ -3991,7 +3992,7 @@ figcaption {
   align-items: center;
   padding-left: 0;
   padding-right: 0;
-  font-size: .8rem;
+  font-size: .8125rem;
   font-weight: 500;
 }
 
@@ -4328,6 +4329,16 @@ figcaption {
   padding-top: 2rem;
 }
 
+.heading_section-wrapper.bg-4 {
+  background-color: var(--principais--ouro);
+  color: var(--secundÃ¡rias--branco);
+  text-transform: uppercase;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .section_stories {
   background-color: var(--secundÃ¡rias--azul-escuro);
   color: var(--secundÃ¡rias--cinza);
@@ -4499,9 +4510,9 @@ figcaption {
 }
 
 .footer1_link-list {
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-  flex-flow: row;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  flex-flow: wrap;
   grid-template-rows: auto;
   grid-template-columns: 100%;
   grid-auto-columns: 100%;
@@ -4511,8 +4522,6 @@ figcaption {
 
 .footer_link {
   text-transform: capitalize;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
   font-size: .875rem;
   text-decoration: none;
 }
@@ -4651,8 +4660,6 @@ figcaption {
   grid-template-rows: auto;
   grid-template-columns: 1fr .5fr;
   grid-auto-columns: 1fr;
-  padding-left: 5%;
-  padding-right: 5%;
   display: grid;
 }
 
@@ -4856,8 +4863,8 @@ figcaption {
 
 .navbar4_component {
   border: 2px solid var(--principais--vermelho-escuro);
-  background-color: var(--principais--areia);
-  color: var(--principais--vermelho-escuro);
+  background-color: var(--principais--vermelho-escuro);
+  color: var(--_primitives---colors--white);
   align-items: center;
   width: 100%;
   padding-left: 1rem;
@@ -5052,7 +5059,7 @@ figcaption {
 }
 
 .navbar4_main_link.w--current {
-  color: var(--principais--marrom);
+  color: var(--_primitives---colors--white);
   font-weight: 700;
 }
 
@@ -5489,13 +5496,12 @@ figcaption {
 .header-materia-wrapper {
   margin-left: auto;
   margin-right: auto;
-  padding: 3rem 5% 0;
+  padding-top: 3rem;
+  padding-bottom: 0;
 }
 
 .content-materia-wrapper {
   padding-top: 3rem;
-  padding-left: 5%;
-  padding-right: 5%;
   display: block;
 }
 
@@ -5713,8 +5719,6 @@ figcaption {
   margin-left: auto;
   margin-right: auto;
   padding-top: 3rem;
-  padding-left: 5%;
-  padding-right: 5%;
   display: grid;
 }
 
@@ -5793,6 +5797,25 @@ figcaption {
 }
 
 @media screen and (min-width: 1280px) {
+  .navbar_component {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .navbar_menu.is-page-height-tablet {
+    font-size: .9125rem;
+  }
+
+  .navbar4_container {
+    max-width: 80rem;
+  }
+
+  .menu-icon4_line-top, .menu-icon4_line-middle, .menu-icon4_line-middle-base, .menu-icon4_line-bottom {
+    background-color: var(--_primitives---colors--white);
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .navbar_component {
     padding-left: 5%;
     padding-right: 5%;
@@ -6796,6 +6819,10 @@ figcaption {
     white-space: normal;
   }
 
+  .text-rich-text p {
+    text-align: left;
+  }
+
   .text-size-large {
     font-size: 1.125rem;
   }
@@ -7324,7 +7351,7 @@ figcaption {
     flex-flow: wrap;
   }
 
-  .heading_section-wrapper.bg-2, .heading_section-wrapper.bg-3 {
+  .heading_section-wrapper.bg-2, .heading_section-wrapper.bg-3, .heading_section-wrapper.bg-4 {
     grid-column-gap: .5rem;
     grid-row-gap: .5rem;
     flex-flow: column;
@@ -7492,4 +7519,4 @@ figcaption {
   }
 }
 
-/* --- END luanaraujo-hml1.webflow.shared.1bd4cfae3.css --- */
+/* --- END luanaraujo-hml1.webflow.shared.52b326f77.css --- */

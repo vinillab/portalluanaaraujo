@@ -1,5 +1,5 @@
 <section class="section_ultimas">
-    <div class="heading_section-wrapper tx-1">
+    <div class="heading_section-wrapper">
         <div class="container-heading-wrapper">
             <h2 class="heading-style-h2">Últimas notícias</h2>
         </div>

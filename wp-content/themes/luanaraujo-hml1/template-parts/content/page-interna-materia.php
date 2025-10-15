@@ -7,104 +7,112 @@
             <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-editoria-topo"]); ?>
 
             <section class="section_materia-post">
-                <div class="blog-post-component">
-                    <div class="header-materia-wrapper">
-                        <div class="blog-post-header2_title-wrapper">
-                            <div class="button-group">
-                                <a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>"
-                                   class="button is-link is-icon w-inline-block">
-                                    <div bind="08b14951-fed4-9600-bcaf-db2105e71829" class="icon-embed-xxsmall w-embed">
-                                        <svg
-                                             width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11 13L6 8L11 3" stroke="CurrentColor" stroke-width="1.5"></path>
-                                        </svg>
+                <div class="padding-global">
+                    <div class="container-large">
+                        <div class="blog-post-component">
+                            <div class="header-materia-wrapper">
+                                <div class="blog-post-header2_title-wrapper">
+                                    <div class="button-group">
+                                        <a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>"
+                                           class="button is-link is-icon w-inline-block">
+                                            <div bind="08b14951-fed4-9600-bcaf-db2105e71829"
+                                                 class="icon-embed-xxsmall w-embed">
+                                                <svg
+                                                     width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 13L6 8L11 3" stroke="CurrentColor" stroke-width="1.5">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="text-weight-semibold"><?php echo get_the_category()[0]->name; ?>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="text-weight-semibold"><?php echo get_the_category()[0]->name; ?></div>
-                                </a>
-                            </div>
-                            <div class="spacer-medium"></div>
-                            <h1 class="heading-style-h2"><?php the_title(); ?></h1>
-                            <div class="spacer-xsmall"></div>
-                            <div class="text-size-large">
-                                <?php
-                                $linha_fina = get_field("linha_fina");
-                                if (!empty($linha_fina)) {
-                                	echo $linha_fina;
-                                } else {
-                                	the_excerpt();
-                                }
-                                ?>
-                            </div>
-                        </div>
-                        <div class="spacer-medium"></div>
-                        <div class="blog-post-header2_content">
-                            <div class="blog-post-header2_content-bottom">
-                                <div class="blog-post-header2_author-wrapper">
-                                    <div class="blog-post-header2_author">
-                                        <div class="text-weight-medium"><?php
-                                        $author_id = get_post_field("post_author", get_the_ID());
-                                        echo get_the_author_meta("display_name", $author_id);
-                                        ?></div>
-                                        <div class="text-size-tiny">Publicado em
-                                            <?php echo get_the_date("d/m/Y - H:i"); ?>
-                                            <?php if (get_the_modified_date() != get_the_date()): ?>- Revisado em
-                                            <?php echo get_the_modified_date("d/m/Y - H:i");endif; ?></div>
+                                    <div class="spacer-medium"></div>
+                                    <h1 class="heading-style-h2"><?php the_title(); ?></h1>
+                                    <div class="spacer-xsmall"></div>
+                                    <div class="text-size-large">
+                                        <?php
+                                    $linha_fina = get_field("linha_fina");
+                                    if (!empty($linha_fina)) {
+                                    	echo $linha_fina;
+                                    } else {
+                                    	the_excerpt();
+                                    }
+                                    ?>
                                     </div>
                                 </div>
-                                <?php get_template_part("template-parts/common/share-icons"); ?>
+                                <div class="spacer-medium"></div>
+                                <div class="blog-post-header2_content">
+                                    <div class="blog-post-header2_content-bottom">
+                                        <div class="blog-post-header2_author-wrapper">
+                                            <div class="blog-post-header2_author">
+                                                <div class="text-weight-medium"><?php
+                                            $author_id = get_post_field("post_author", get_the_ID());
+                                            echo get_the_author_meta("display_name", $author_id);
+                                            ?></div>
+                                                <div class="text-size-tiny">Publicado em
+                                                    <?php echo get_the_date("d/m/Y - H:i"); ?>
+                                                    <?php if (get_the_modified_date() != get_the_date()): ?>- Revisado
+                                                    em
+                                                    <?php echo get_the_modified_date("d/m/Y - H:i");endif; ?></div>
+                                            </div>
+                                        </div>
+                                        <?php get_template_part("template-parts/common/share-icons"); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer-medium"></div>
+                            <div class="image-materia-wrapper">
+                                <div class="blog-post-header2_image-wrapper">
+                                    <?php if (has_post_thumbnail()): ?>
+                                    <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
+                                    <?php else: ?>
+                                    <img loading="lazy"
+                                         src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
+                                         alt="Imagem da notíciam não está disponível." class="blog-post-header2_image">
+                                    <?php endif; ?>
+                                </div>
+                                <div class="banner_interna_materia_wrapper">
+
+                                    <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-materia-imagem"]); ?>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="spacer-medium"></div>
-                    <div class="image-materia-wrapper">
-                        <div class="blog-post-header2_image-wrapper">
-                            <?php if (has_post_thumbnail()): ?>
-                            <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
-                            <?php else: ?>
-                            <img loading="lazy"
-                                 src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
-                                 alt="Imagem da notíciam não está disponível." class="blog-post-header2_image">
-                            <?php endif; ?>
-                        </div>
-                        <div class="banner_interna_materia_wrapper">
 
-                            <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-materia-imagem"]); ?>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content-materia-sidebar">
-                    <div class="content-post-content">
-                        <div class="text-rich-text w-richtext">
-                            <?php the_content(); ?>
-                        </div>
-                        <div class="spacer-large"></div>
-                        <div class="blog-post2-content_content-bottom">
-                            <div class="blog-post2-content_tag-list">
-                                <?php
-                                $post_tags = get_the_tags();
-                                if ($post_tags) {
-                                	foreach ($post_tags as $tag) {
-                                		echo '<a href="' . get_tag_link($tag->term_id) . '" class="blog-post2-content_tag-item w-inline-block">';
-                                		echo "<div>" . $tag->name . "</div>";
-                                		echo "</a>";
-                                	}
-                                }
-                                ?>
+                        <div class="content-materia-sidebar">
+                            <div class="content-post-content">
+                                <div class="text-rich-text w-richtext">
+                                    <?php the_content(); ?>
+                                </div>
+                                <div class="spacer-large"></div>
+                                <div class="blog-post2-content_content-bottom">
+                                    <div class="blog-post2-content_tag-list">
+                                        <?php
+                                    $post_tags = get_the_tags();
+                                    if ($post_tags) {
+                                    	foreach ($post_tags as $tag) {
+                                    		echo '<a href="' . get_tag_link($tag->term_id) . '" class="blog-post2-content_tag-item w-inline-block">';
+                                    		echo "<div>" . $tag->name . "</div>";
+                                    		echo "</a>";
+                                    	}
+                                    }
+                                    ?>
+                                    </div>
+                                    <?php get_template_part("template-parts/common/share-icons"); ?>
+                                </div>
+                                <div class="author-wrapper">
+                                    <div class="blog-post2-content_author-text">
+                                        <div class="text-block-2">
+                                            <?php echo get_the_author_meta("description", $author_id); ?></div>
+                                    </div>
+                                </div>
                             </div>
-                            <?php get_template_part("template-parts/common/share-icons"); ?>
-                        </div>
-                        <div class="author-wrapper">
-                            <div class="blog-post2-content_author-text">
-                                <div class="text-block-2">
-                                    <?php echo get_the_author_meta("description", $author_id); ?></div>
+                            <div class="content-sidebar">
+                                <?php get_template_part("template-parts/banners/sidebar-interna"); ?>
                             </div>
                         </div>
-                    </div>
-                    <div class="content-sidebar">
-                        <?php get_template_part("template-parts/banners/sidebar-interna"); ?>
                     </div>
                 </div>
             </section>
