@@ -10,6 +10,22 @@ $args = [
 ];
 
 get_header("", $args);
+
+// Modify the main query to show exactly 10 posts
+global $wp_query;
+if ($wp_query->is_search()) {
+	$paged = get_query_var("paged") ? get_query_var("paged") : 1;
+	$search_query = get_search_query();
+
+	$args = [
+		"s" => $search_query,
+		"posts_per_page" => 9,
+		"paged" => $paged,
+		"post_status" => "publish",
+	];
+
+	$wp_query = new WP_Query($args);
+}
 ?>
 
 <div class="page-wrapper">
@@ -31,8 +47,7 @@ get_header("", $args);
                             </div>
                         </div>
                         <h1 class="heading-style-h2">
-                            /* translators: %s: search query
-                            */<?php printf(esc_html__("Resultados da busca por: %s", "luanaraujo-hml1"), "<span>" . get_search_query() . "</span>"); ?>
+                            <?php printf(esc_html__("Resultados da busca por: %s", "luanaraujo-hml1"), "<span>" . get_search_query() . "</span>"); ?>
                         </h1>
 
                         <div class="spacer-small"></div>
@@ -125,14 +140,16 @@ get_header("", $args);
                         // Get total search results count
                         global $wp_query;
                         $total_search_results = $wp_query->found_posts;
+                        $posts_shown = $wp_query->post_count;
 
-                        // Show load more button if we have more than 10 results
-                        if ($total_search_results > 10): ?>
+                        // Show load more button if we have more results to show
+                        if ($total_search_results > $posts_shown): ?>
                         <div class="margin-top margin-xxlarge">
                             <div class="button-group is-center">
                                 <a href="#"
                                    class="button load-more w-button"
-                                   data-search-query="<?php echo esc_attr(get_search_query()); ?>">VER&nbsp;MAIS</a>
+                                   data-search-query="<?php echo esc_attr(get_search_query()); ?>"
+                                   data-initial-offset="<?php echo $posts_shown; ?>">VER&nbsp;MAIS</a>
                             </div>
                         </div>
                         <?php endif;

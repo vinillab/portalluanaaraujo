@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 	let isLoading = false;
-	let currentOffset = 10; // Start after the first 10 posts (4 featured + 6 in grid)
+	let currentOffset = 10; // Default: Start after the first 10 posts (4 featured + 6 in grid)
 
 	// Handle load more button click
 	$(document).on("click", ".load-more", function (e) {
@@ -10,6 +10,12 @@ jQuery(document).ready(function ($) {
 
 		const button = $(this);
 		const originalText = button.text();
+
+		// Check if button has initial offset data attribute (for search pages)
+		if (button.data("initial-offset") && !button.data("offset-initialized")) {
+			currentOffset = parseInt(button.data("initial-offset"));
+			button.data("offset-initialized", true);
+		}
 
 		// Show loading state
 		isLoading = true;
