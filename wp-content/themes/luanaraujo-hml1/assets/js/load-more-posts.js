@@ -36,6 +36,8 @@ jQuery(document).ready(function ($) {
 		} else if (button.data("taxonomy") && button.data("term-id")) {
 			data.taxonomy = button.data("taxonomy");
 			data.term_id = button.data("term-id");
+		} else if (button.data("search-query")) {
+			data.search_query = button.data("search-query");
 		}
 
 		// Make AJAX request

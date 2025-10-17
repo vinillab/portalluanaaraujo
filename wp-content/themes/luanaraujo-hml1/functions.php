@@ -175,6 +175,8 @@ function load_more_posts_callback()
 				"terms" => intval($_POST["term_id"]),
 			],
 		];
+	} elseif (isset($_POST["search_query"]) && !empty($_POST["search_query"])) {
+		$args["s"] = sanitize_text_field($_POST["search_query"]);
 	}
 
 	$query = new WP_Query($args);

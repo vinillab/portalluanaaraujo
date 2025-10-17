@@ -18,7 +18,7 @@ get_header("", $args);
     <?php get_template_part("template-parts/common/global-styles"); ?>
 
     <main class="main-wrapper">
-        
+
         <header class="section_destaques_interna">
             <div class="padding-global">
                 <div class="container-large">
@@ -31,29 +31,29 @@ get_header("", $args);
                             </div>
                         </div>
                         <h1 class="heading-style-h2">
-                            <?php /* translators: %s: search query */
-                            printf(esc_html__("Resultados da busca por: %s", "luanaraujo-hml1"), "<span>" . get_search_query() . "</span>"); ?>
+                            /* translators: %s: search query
+                            */<?php printf(esc_html__("Resultados da busca por: %s", "luanaraujo-hml1"), "<span>" . get_search_query() . "</span>"); ?>
                         </h1>
-                        
+
                         <div class="spacer-small"></div>
-                        
+
                         <!-- Search Form -->
                         <div class="search-form-wrapper" style="max-width: 600px;">
-                            <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url("/")); ?>" style="display: flex; gap: 1rem; align-items: stretch;">
-                                <input 
-                                    type="search" 
-                                    class="search-field" 
-                                    placeholder="Digite sua busca..." 
-                                    value="<?php echo get_search_query(); ?>" 
-                                    name="s" 
-                                    style="flex: 1; padding: 0.75rem 1rem; font-size: 1rem; border: 2px solid #e0e0e0; border-radius: 4px; font-family: inherit;"
-                                    required
-                                />
-                                <button 
-                                    type="submit" 
-                                    class="button w-button" 
-                                    style="padding: 0.75rem 1.5rem; white-space: nowrap;"
-                                >
+                            <form role="search" method="get" class="search-form"
+                                  action="<?php echo esc_url(home_url("/")); ?>"
+                                  style="display: flex; gap: 1rem; align-items: stretch;">
+                                <input
+                                       type="search"
+                                       class="search-field"
+                                       placeholder="Digite sua busca..."
+                                       value="<?php echo get_search_query(); ?>"
+                                       name="s"
+                                       style="flex: 1; padding: 0.75rem 1rem; font-size: 1rem; border: 2px solid #e0e0e0; border-radius: 4px; font-family: inherit;"
+                                       required />
+                                <button
+                                        type="submit"
+                                        class="button w-button"
+                                        style="padding: 0.75rem 1.5rem; white-space: nowrap;">
                                     Buscar
                                 </button>
                             </form>
@@ -106,8 +106,10 @@ get_header("", $args);
                                             <div class="button is-link is-icon">
                                                 <div>Saiba mais</div>
                                                 <div class="icon-embed-xxsmall w-embed">
-                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 3L11 8L6 13" stroke="CurrentColor"
+                                                              stroke-width="1.5"></path>
                                                     </svg>
                                                 </div>
                                             </div>
@@ -118,21 +120,19 @@ get_header("", $args);
                                 endwhile; ?>
                             </div>
                         </div>
-                        
-                        <?php
-                        // Pagination
-                        $pagination_args = [
-                        	"mid_size" => 2,
-                        	"prev_text" => "← Anterior",
-                        	"next_text" => "Próxima →",
-                        	"type" => "list",
-                        ];
-                        $pagination = paginate_links($pagination_args);
 
-                        if ($pagination): ?>
+                        <?php
+                        // Get total search results count
+                        global $wp_query;
+                        $total_search_results = $wp_query->found_posts;
+
+                        // Show load more button if we have more than 10 results
+                        if ($total_search_results > 10): ?>
                         <div class="margin-top margin-xxlarge">
                             <div class="button-group is-center">
-                                <?php echo $pagination; ?>
+                                <a href="#"
+                                   class="button load-more w-button"
+                                   data-search-query="<?php echo esc_attr(get_search_query()); ?>">VER&nbsp;MAIS</a>
                             </div>
                         </div>
                         <?php endif;
@@ -151,7 +151,7 @@ get_header("", $args);
                             <h3 class="heading-style-h4">Nenhum resultado encontrado</h3>
                             <div class="spacer-small"></div>
                             <p class="text-size-regular">
-                                Desculpe, não encontramos nenhum conteúdo correspondente à sua busca. 
+                                Desculpe, não encontramos nenhum conteúdo correspondente à sua busca.
                                 Tente usar palavras-chave diferentes ou mais gerais.
                             </p>
                             <div class="spacer-medium"></div>
@@ -174,4 +174,3 @@ $args = [
 ];
 
 get_footer("", $args);
-
