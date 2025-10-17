@@ -14,7 +14,7 @@
                             <div class="margin-bottom margin-tiny">
                                 <div class="breadcrumb_component">
                                     <a href="<?php echo home_url(); ?>" class="breadcrumb-link w-inline-block">
-                                        <div>InICIO</div>
+                                        <div>INÍCIO</div>
                                     </a>
                                 </div>
                             </div>

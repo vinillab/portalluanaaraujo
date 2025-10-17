@@ -12,7 +12,7 @@
                     <div class="margin-bottom margin-tiny">
                         <div class="breadcrumb_component">
                             <a blocks-name="breadcrumb-link" href="#" class="breadcrumb-link w-inline-block">
-                                <div>InICIO</div>
+                                <div>INÍCIO</div>
                             </a>
                         </div>
                     </div>
