@@ -19,6 +19,13 @@
                                 </div>
                             </div>
                             <h2 class="heading-style-h2"><?php single_cat_title(); ?></h2>
+                            <?php
+                            $current_category = get_category(get_query_var("cat"));
+                            if ($current_category && $current_category->slug === "opiniao"): ?>
+                            <div class="spacer-tiny"></div>
+                            <p class="text-size-regular">por Luana Araújo</p>
+                            <?php endif;
+                            ?>
                         </div>
                         <div class="padding-section-small">
                             <div class="blog10_featured-blog">
