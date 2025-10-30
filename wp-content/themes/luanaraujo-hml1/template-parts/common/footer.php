@@ -32,13 +32,14 @@
                                   <div class="text-weight-semibold">Sobre</div>
                                   <div class="footer1_link-list">
                                       <a href="<?php echo esc_url(home_url("bio")); ?>" class="footer_link">Luana
-                                          araújo</a>
+                                          araujo</a>
                                   </div>
                               </div>
                           </div>
                           <div class="footer_social-wrapper">
                               <div class="footer_social_list">
-                                  <a href="#" class="footer_social-link w-inline-block">
+                                  <a href="https://www.instagram.com/drluanaaraujo"
+                                     class="footer_social-link w-inline-block" target="_blank">
                                       <div class="icon-embed-medium w-embed"><svg width="100%" height="100%"
                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -46,7 +47,8 @@
                                                     fill="CurrentColor"></path>
                                           </svg></div>
                                   </a>
-                                  <a href="#" class="footer_social-link w-inline-block">
+                                  <a href="https://www.youtube.com/@DRaLUANAARAUJO"
+                                     class="footer_social-link w-inline-block" target="_blank">
                                       <div class="icon-embed-medium w-embed"><svg width="100%" height="100%"
                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                               <path fill-rule="evenodd" clip-rule="evenodd"

@@ -6,7 +6,7 @@
         <main class="main-wrapper">
             <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-editoria-topo"]); ?>
 
-            <section class="section_materia-post">
+            <header class="section_materia-post">
                 <div class="padding-global">
                     <div class="container-large">
                         <div class="blog-post-component">
@@ -33,13 +33,13 @@
                                     <div class="spacer-xsmall"></div>
                                     <div class="text-size-large">
                                         <?php
-                                    $linha_fina = get_field("linha_fina");
-                                    if (!empty($linha_fina)) {
-                                    	echo $linha_fina;
-                                    } else {
-                                    	the_excerpt();
-                                    }
-                                    ?>
+                                        $linha_fina = get_field("linha_fina");
+                                        if (!empty($linha_fina)) {
+                                        	echo $linha_fina;
+                                        } else {
+                                        	the_excerpt();
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="spacer-medium"></div>
@@ -48,9 +48,9 @@
                                         <div class="blog-post-header2_author-wrapper">
                                             <div class="blog-post-header2_author">
                                                 <div class="text-weight-medium"><?php
-                                            $author_id = get_post_field("post_author", get_the_ID());
-                                            echo get_the_author_meta("display_name", $author_id);
-                                            ?></div>
+                                                $author_id = get_post_field("post_author", get_the_ID());
+                                                echo get_the_author_meta("display_name", $author_id);
+                                                ?></div>
                                                 <div class="text-size-tiny">Publicado em
                                                     <?php echo get_the_date("d/m/Y - H:i"); ?>
                                                     <?php if (get_the_modified_date() != get_the_date()): ?>- Revisado
@@ -63,24 +63,30 @@
                                 </div>
                             </div>
                             <div class="spacer-medium"></div>
-                            <div class="image-materia-wrapper">
-                                <div class="blog-post-header2_image-wrapper">
-                                    <?php if (has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
-                                    <?php else: ?>
-                                    <img loading="lazy"
-                                         src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
-                                         alt="Imagem da notíciam não está disponível." class="blog-post-header2_image">
-                                    <?php endif; ?>
-                                </div>
-                                <div class="banner_interna_materia_wrapper">
-
-                                    <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-materia-imagem"]); ?>
-
-                                </div>
-                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="padding-image-materia">
+                    <div class="image-materia-wrapper container-large">
+                        <div class="blog-post-header2_image-wrapper">
+                            <?php if (has_post_thumbnail()): ?>
+                            <?php the_post_thumbnail("large", ["class" => "blog-post-header2_image", "loading" => "eager"]); ?>
+                            <?php else: ?>
+                            <img loading="lazy"
+                                 src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-image-landscape.svg?v=1742321523"
+                                 alt="Imagem da notíciam não está disponível." class="blog-post-header2_image">
+                            <?php endif; ?>
+                        </div>
+                        <div class="banner_interna_materia_wrapper">
+                            <?php get_template_part("template-parts/banners/ads-component", null, ["ad_id" => "ad-materia-imagem"]); ?>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
+            <section class="section_materia-post">
+                <div class="padding-global">
+                    <div class="container-large">
                         <div class="content-materia-sidebar">
                             <div class="content-post-content">
                                 <div class="text-rich-text w-richtext">
@@ -90,15 +96,15 @@
                                 <div class="blog-post2-content_content-bottom">
                                     <div class="blog-post2-content_tag-list">
                                         <?php
-                                    $post_tags = get_the_tags();
-                                    if ($post_tags) {
-                                    	foreach ($post_tags as $tag) {
-                                    		echo '<a href="' . get_tag_link($tag->term_id) . '" class="blog-post2-content_tag-item w-inline-block">';
-                                    		echo "<div>" . $tag->name . "</div>";
-                                    		echo "</a>";
-                                    	}
-                                    }
-                                    ?>
+                                        $post_tags = get_the_tags();
+                                        if ($post_tags) {
+                                        	foreach ($post_tags as $tag) {
+                                        		echo '<a href="' . get_tag_link($tag->term_id) . '" class="blog-post2-content_tag-item w-inline-block">';
+                                        		echo "<div>" . $tag->name . "</div>";
+                                        		echo "</a>";
+                                        	}
+                                        }
+                                        ?>
                                     </div>
                                     <?php get_template_part("template-parts/common/share-icons"); ?>
                                 </div>

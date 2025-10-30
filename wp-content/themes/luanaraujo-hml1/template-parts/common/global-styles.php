@@ -404,6 +404,18 @@
                background-color: var(--color-scheme-1--text) !important;
                opacity: 1 !important;
            }
+
+           .padding-image-materia {
+               padding-left: 5%;
+               padding-right: 5%;
+           }
+
+           @media screen and (max-width: 991px) {
+               .padding-image-materia {
+                   padding-left: 0%;
+                   padding-right: 0%;
+               }
+           }
            </style>
        </div>
    </div>
