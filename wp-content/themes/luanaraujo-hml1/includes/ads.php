@@ -24,7 +24,7 @@ window.pushAds.push("<?php echo $tag_id; ?>");
 }
 
 // ads entre paragrafos single.php
-//add_filter("the_content", "ads_single_paragraphs");
+add_filter("the_content", "ads_single_paragraphs");
 
 function ads_single_paragraphs($content)
 {
@@ -64,30 +64,6 @@ function prefix_insert_ads_with_amp($content, $ad_interval = 4)
 	$ad_template = "<div class='spacer-small'></div>
         <div id='banner-300x250-ad{ad_count}' class='ads_text'>
             <script>window.uolads.push({ id: 'banner-300x250-ad{ad_count}' });</script></div>
-            <div class='anuncio-amp'>
-                <amp-ad width='300' height='250' 
-                    type='doubleclick' 
-                    data-lazy-fetch='true' 
-                    data-loading-strategy='1'
-                    data-enable-refresh='30'
-                    data-slot='/8804/parceiros/drauzio_varella' 
-                    json='{\"targeting\":{\"keyword\":[\"amp\"],\"campaignuol\":[\"1\"],\"expble\":[\"1\"],\"native\":[\"0\"],\"pos\":[\"middle\"],\"origin\":\"{{$originURL}}\"}}' 
-                    rtc-config='{ 
-                        \"urls\": [
-                            \"https://udr.uol.com.br?tag=publicidade&fmt=amprtc\",
-                            \"https://page-context.uol.com.br/api/get-amp-page-context?url={{$escaped_permalink}}\"
-                        ], 
-                        \"vendors\": {
-                            \"aps\": {
-                                \"PUB_ID\": \"600\",
-                                \"PUB_UUID\": \"0e1ab0a1-d93f-4bdc-b304-e76a53464e72\",
-                                \"PARAMS\": {\"amp\": \"1\"}
-                            },
-                            \"prebidappnexuspsp\": {\"PLACEMENT_ID\": \"29132677\"}
-                        }, 
-                        \"timeoutMillis\": 1000}'>
-                </amp-ad>
-            </div>
         <div class='spacer-small'></div>";
 
 	// Insert div with id 'uolpd-video-inarticle' between second and third paragraph
