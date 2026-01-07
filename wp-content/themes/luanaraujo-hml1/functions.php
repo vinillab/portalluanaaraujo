@@ -1,7 +1,8 @@
 <?php
 
-// Include ads functionality
+// Include files
 require_once get_template_directory() . "/includes/ads.php";
+require_once get_template_directory() . "/includes/feed-monaco.php";
 
 function udesly_theme_utils_get_term_id_by_slug($slug, $type)
 {
