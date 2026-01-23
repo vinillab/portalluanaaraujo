@@ -3961,7 +3961,7 @@ figcaption {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 80rem;
+  max-width: 90rem;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -5815,7 +5815,7 @@ figcaption {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1441px) {
   .navbar_component {
     padding-left: 5%;
     padding-right: 5%;
