@@ -61,7 +61,7 @@
                                                     <h3 class="heading-style-h5"><?php the_title(); ?></h3>
                                                     <div class="spacer-xsmall"></div>
                                                     <div class="text-size-regular">
-                                                        <?php echo wp_trim_words(get_the_excerpt(), 30); ?></div>
+                                                        <?php the_excerpt(); ?></div>
                                                     <div class="spacer-small"></div>
                                                     <div class="button-group">
 
@@ -97,7 +97,7 @@
                                                     <h3 class="heading-style-h5"><?php the_title(); ?></h3>
                                                     <div class="spacer-xxsmall"></div>
                                                     <div class="text-size-regular">
-                                                        <?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>
+                                                        <?php the_excerpt(); ?></div>
                                                     <div class="spacer-small"></div>
                                                     <div class="button-group">
 
@@ -174,7 +174,7 @@
                                             <h3 class="heading-style-h5"><?php the_title(); ?></h3>
                                             <div class="spacer-xxsmall"></div>
                                             <div class="text-size-regular">
-                                                <?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>
+                                                <?php the_excerpt(); ?></div>
                                             <div class="spacer-small"></div>
                                             <div class="button-group">
                                                 <div class="post_meta-wrapper">

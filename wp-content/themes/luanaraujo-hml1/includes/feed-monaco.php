@@ -89,12 +89,12 @@ echo "<documents>\n";
             echo " <content id=\"imagem\">" . utf8_decode($attached_file_src) . "</content>\n";
             echo " <content id=\"imagem-credito\">
                 <![CDATA[" .
-			$attached_file_description .
+			$attached_file_caption .
 			"]]>
             </content>\n";
             echo " <content id=\"imagem-legenda\">
                 <![CDATA[" .
-			utf8_decode($attached_file_caption) .
+			utf8_decode($attached_file_description) .
 			"]]>
             </content>\n";
             echo " </document>\n";
