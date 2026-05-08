@@ -3542,12 +3542,12 @@ figcaption {
 
 .text-rich-text a {
 	color: var(--principais--marrom);
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .text-rich-text a:hover {
 	color: var(--principais--marrom);
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .text-rich-text figcaption {
