@@ -3543,6 +3543,7 @@ figcaption {
 .text-rich-text a {
 	color: var(--principais--marrom);
 	text-decoration: none;
+	font-weight: 700;
 }
 
 .text-rich-text a:hover {
